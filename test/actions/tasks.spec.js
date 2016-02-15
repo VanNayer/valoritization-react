@@ -1,5 +1,5 @@
 import expect from 'expect'
-import * as actions from '../../src/actions/index.jsx'
+import * as actions from '../../src/actions/actions.jsx'
 
 describe('task actions', () => {
   it('addTask should create ADD_TASK action', () => {

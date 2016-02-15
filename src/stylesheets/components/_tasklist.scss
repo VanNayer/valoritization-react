@@ -1,21 +1,8 @@
-.tasklist {
-
-  color: white;
-  transition: all 0.25s ease-in-out;
-  overflow: hidden;
-
-  &.calendar-enter {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-
-  &.calendar-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &.calendar-leave-active {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
+.matrix__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0.25;
 }

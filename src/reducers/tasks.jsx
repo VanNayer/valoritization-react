@@ -4,6 +4,8 @@ const task = (state, action) => {
       return {
         id: action.id,
         text: action.text,
+        value: action.value,
+        cost: action.cost,
         completed: false
       }
     case 'TOGGLE_TASK':

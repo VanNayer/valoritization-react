@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { toggleTask } from '../actions/index.jsx'
-import TaskList from '../components/tasklist/index.jsx'
+import { toggleTask } from '../actions/actions.jsx'
+import TaskList from '../components/tasklist/tasklist.jsx'
 
 const getVisibleTasks = (tasks, filter) => {
   switch (filter) {
