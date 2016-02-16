@@ -15,7 +15,8 @@ const getVisibleTasks = (tasks, filter) => {
 
 const mapStateToProps = (state) => {
   return {
-    tasks: getVisibleTasks(state.tasks, state.visibilityFilter)
+    tasks: getVisibleTasks(state.tasks, state.visibilityFilter),
+    extremeCoordinates: state.extremeCoordinates
   }
 }
 
