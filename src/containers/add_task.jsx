@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTask } from '../actions/actions.jsx'
 
-let AddTaskToBeConnected = ({ dispatch }) => {
+let AddTask = ({ dispatch }) => {
 
   let text;
   let value;
@@ -24,6 +24,6 @@ let AddTaskToBeConnected = ({ dispatch }) => {
     </div>
   )
 }
-let AddTask = connect()(AddTaskToBeConnected)
+AddTask = connect()(AddTask)
 
 export default AddTask
