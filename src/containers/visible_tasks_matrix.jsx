@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { toggleTask } from '../actions/actions.jsx'
-import TaskList from '../components/tasklist/tasklist.jsx'
+import Matrix from '../components/matrix/matrix.jsx'
 
 const getVisibleTasks = (tasks, filter) => {
   switch (filter) {
@@ -28,9 +28,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const VisibleTaskList = connect(
+const VisibleTasksMatrix = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TaskList)
+)(Matrix)
 
-export default VisibleTaskList
+export default VisibleTasksMatrix
