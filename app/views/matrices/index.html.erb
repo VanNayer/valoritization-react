@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Matrices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Cost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matrices.each do |matrix| %>
+      <tr>
+        <td><%= matrix.name %></td>
+        <td><%= matrix.value %></td>
+        <td><%= matrix.cost %></td>
+        <td><%= link_to 'Show', matrix %></td>
+        <td><%= link_to 'Edit', edit_matrix_path(matrix) %></td>
+        <td><%= link_to 'Destroy', matrix, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Matrix', new_matrix_path %>

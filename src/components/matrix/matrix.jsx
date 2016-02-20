@@ -20,7 +20,7 @@ const Matrix = ({tasks, onTaskClick, extremeCoordinates}) => (
   <div style={matrixHeight} >
     <Cost maxCost={extremeCoordinates.maxCost}/>
     <Value maxValue={extremeCoordinates.maxValue}/>
-    <img style={Object.assign(imgStyle, matrixHeight)} src="matrix-background.png" />
+    <img style={Object.assign(imgStyle, matrixHeight)} src="/matrix-background.png" />
     {tasks.map(task =>
       <Task
         key={task.id}
