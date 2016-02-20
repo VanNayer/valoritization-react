@@ -1,5 +1,17 @@
 import React, {PropTypes} from 'react'
 
+var taskStyle = {
+  color: 'white',
+  position: 'absolute',
+  borderRadius: '40px',
+  backgroundColor: '#333',
+  paddingLeft: '10px',
+  paddingRight: '10px',
+  textAlign: 'center',
+  opacity: '.8',
+  whiteSpace: 'nowrap'
+}
+
 const computeXPosition = (taskCost, extreme) => {
   let relativeCost = (taskCost - extreme.minCost)
   let relativeCostDelta = (extreme.maxCost - extreme.minCost)
@@ -11,15 +23,20 @@ const computeYPosition = (taskValue, extreme) => {
   return Math.round(((relativeValue) * 100) / (relativeValueDelta))
 }
 
-const Task = ({onClick, completed, text, value, cost, extremeCoordinates}) => (
-  <article
-    className="matrix__tasks__task"
-    onClick={onClick}
-    style={{
-      textDecoration: completed ? 'line-through' : 'none',
-      left: computeXPosition(cost, extremeCoordinates) + '%',
-      bottom: computeYPosition(value, extremeCoordinates) + '%'
-    }}>
+const Task = ({
+  onClick,
+  completed,
+  text,
+  value,
+  cost,
+  extremeCoordinates
+}) => (
+  <article className="matrix__tasks__task" onClick={onClick} style={
+      Object.assign({
+          textDecoration: completed? 'line-through': 'none',
+          left: computeXPosition(cost, extremeCoordinates) + '%',
+          bottom: computeYPosition(value, extremeCoordinates) + '%'
+        }, taskStyle)}>
     {text}
   </article>
 )
@@ -30,12 +47,7 @@ Task.propTypes = {
   text: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   cost: PropTypes.number.isRequired,
-  extremeCoordinates: React.PropTypes.shape({
-    maxCost: PropTypes.number.isRequired,
-    maxValue: PropTypes.number.isRequired,
-    minCost: PropTypes.number.isRequired,
-    minValue: PropTypes.number.isRequired
-  })
+  extremeCoordinates: React.PropTypes.shape({maxCost: PropTypes.number.isRequired, maxValue: PropTypes.number.isRequired, minCost: PropTypes.number.isRequired, minValue: PropTypes.number.isRequired})
 }
 
 export default Task

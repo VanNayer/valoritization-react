@@ -6,9 +6,10 @@ import TasksList from '../containers/tasks_list.jsx'
 
 const App = () => (
   <div>
-    <AddTask />
+
     <VisibleTasksMatrix />
     <TasksList />
+    <AddTask />
     <Footer />
   </div>
 )
