@@ -10,6 +10,16 @@ export const addTask = (text, value, cost) => {
   }
 }
 
+export const updateTask = (id, text, value, cost) => {
+  return {
+    type: 'UPDATE_TASK',
+    id,
+    text,
+    value,
+    cost
+  }
+}
+
 export const setVisibilityFilter = (filter) => {
   return {type: 'SET_VISIBILITY_FILTER', filter}
 }

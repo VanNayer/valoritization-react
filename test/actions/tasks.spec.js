@@ -25,4 +25,14 @@ describe('task actions', () => {
       id: 1
     })
   })
+
+  it('updateTask should create UPDATE_TASK action', () => {
+    expect(actions.updateTask(1, 'Michel', 3, 4)).toEqual({
+      type: 'UPDATE_TASK',
+      id: 1,
+      text: 'Michel',
+      value: 3,
+      cost: 4
+    })
+  })
 })

@@ -38,18 +38,33 @@ describe('extreme_coordinates reducer', () => {
       minValue: 0
     })
 
-    expect(extremeCoordinates({}}, {
+    expect(extremeCoordinates({maxCost: 40,maxValue: 40,minCost: 5,minValue: 5}, {
       type: 'ADD_TASK',
       text: 'task0',
       cost: 30,
+      value: 0,
+      id: 0
+    })).toEqual({
+      maxCost: 40,
+      maxValue: 40,
+      minCost: 5,
+      minValue: 0
+    })
+  })
+  it('should handle UPDATE_TASK', () => {
+    expect(extremeCoordinates({maxCost: 5,maxValue: 5,minCost: 0,minValue: 0}, {
+      type: 'UPDATE_TASK',
+      text: 'task0',
+      cost: 33,
       value: 30,
       id: 0
     })).toEqual({
-      maxCost: 30,
+      maxCost: 33,
       maxValue: 30,
       minCost: 0,
       minValue: 0
     })
+
   })
 
 })

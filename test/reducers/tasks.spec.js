@@ -21,7 +21,7 @@ describe('tasks reducer', () => {
       id: 0
     }])
 
-  expect(
+    expect(
       tasks([{
         text: 'Run the tests',
         completed: false,
@@ -91,6 +91,28 @@ describe('tasks reducer', () => {
       completed: false,
       value: 7000,
       cost: 7777,
+      id: 0
+    }])
+  })
+
+  it('should handle UPDATE_TASK', () => {
+    expect(tasks([{
+      text: 'task0',
+      completed: false,
+      value: 8000,
+      cost: 8888,
+      id: 0
+    }], {
+      type: 'UPDATE_TASK',
+      text: 'coucou',
+      value: 22,
+      cost: 33,
+      id: 0
+    })).toEqual([{
+      text: 'coucou',
+      completed: false,
+      value: 22,
+      cost: 33,
       id: 0
     }])
   })
