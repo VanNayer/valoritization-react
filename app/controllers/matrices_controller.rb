@@ -1,6 +1,9 @@
 class MatricesController < ApplicationController
   before_action :set_matrix, only: [:show, :edit, :update, :destroy]
 
+  def uuid
+    render plain: SecureRandom.uuid
+  end
   # GET /matrices
   # GET /matrices.json
   def index

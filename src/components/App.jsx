@@ -5,12 +5,9 @@ import TasksList from '../containers/tasks_list.jsx'
 
 const App = () => (
   <div>
-
-    <VisibleTasksMatrix />
-    <TasksList />
-
-    <Footer />
+    <VisibleTasksMatrix/>
+    <TasksList/>
+    <Footer/>
   </div>
 )
-
 export default App

@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addTask} from '../actions/actions.jsx'
+import {createTask} from '../actions/actions.jsx'
 
 let AddTask = ({dispatch}) => {
 
@@ -15,8 +15,10 @@ let AddTask = ({dispatch}) => {
       <td><input ref={node => {cost = node}}/></td>
       <td>
         <button onClick={() => {
-          dispatch(addTask(text.value, parseInt(value.value), parseInt(cost.value)));
-          text.value = ''
+          dispatch(createTask(text.value, parseInt(value.value), parseInt(cost.value)));
+          text.value = '';
+          value.value = '';
+          cost.value = '';
         }}>
           Add Task
         </button>

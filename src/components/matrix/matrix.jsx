@@ -32,7 +32,7 @@ const Matrix = ({tasks, onTaskClick, extremeCoordinates}) => (
 )
 
 Matrix.propTypes = {
-  tasks: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.number.isRequired, completed: PropTypes.bool.isRequired, text: PropTypes.string.isRequired, value: PropTypes.number.isRequired, cost: PropTypes.number.isRequired}).isRequired).isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.string.isRequired, completed: PropTypes.bool.isRequired, text: PropTypes.string.isRequired, value: PropTypes.number.isRequired, cost: PropTypes.number.isRequired}).isRequired).isRequired,
   onTaskClick: PropTypes.func.isRequired,
   extremeCoordinates: React.PropTypes.shape({maxCost: PropTypes.number.isRequired, maxValue: PropTypes.number.isRequired, minCost: PropTypes.number.isRequired, minValue: PropTypes.number.isRequired})
 }

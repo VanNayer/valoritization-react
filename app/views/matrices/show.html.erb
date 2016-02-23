@@ -3,9 +3,35 @@
 <p>
   <%= @matrix.name %></p>
 <div class="valoritization" id="root">
+  <script>
+    var INITIAL = {
+      "tasks": [
+        {
+          "id": 0,
+          "text": "coucou",
+          "value": 5,
+          "cost": 5,
+          "completed": false
+        }, {
+          "id": 1,
+          "text": "youpi",
+          "value": 6,
+          "cost": 6,
+          "completed": true
+        }
+      ],
+      "visibilityFilter": "SHOW_ALL",
+      "extremeCoordinates": {
+        "minValue": 0,
+        "maxValue": 10,
+        "minCost": 0,
+        "maxCost": 10
+      }
+    };
+  </script>
 </div>
 <script src="/bundle.js"></script>
 
-
-<%= link_to 'Edit', edit_matrix_path(@matrix) %> |
+<%= link_to 'Edit', edit_matrix_path(@matrix) %>
+|
 <%= link_to 'Back', matrices_path %>
