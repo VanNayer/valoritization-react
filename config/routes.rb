@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :matrices do
     resources :tasks
   end
+  get '/about', to: 'about#index'
+
 end

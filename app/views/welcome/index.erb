@@ -1,1 +1,58 @@
-<%=link_to 'Go', :matrices %>
+<figure class="banner tac man mtxl pan">
+  <%=image_tag('welcome-banner.jpg')%>
+</figure>
+<div class="row mtxl">
+  <section class="large-6 columns taj">
+    <h4 class="mtl">Overwhelmed?</h4>
+    <p>
+      Valoritization is a simple tool to step back and find where to start. It works for every situation where you have too much on your plate; if you want an efficient way to deal with it, you just found it!
+    </p>
+    <ul>
+      <li>You need an easy way of getting everyone to agree on a plan?</li>
+      <li>You have an exam tomorrow and you are 10 chapters behind?</li>
+      <li>You have too many books that you want to read?</li>
+      <li>You want to realize a personal project?</li>
+    </ul>
+    <p>
+      The best example might be this website himself. Indeed, <%=link_to 'I am using this website', :matrices %> to create it.
+    </p>
+    <p>
+      Feel free to add a task you wish to be added to Valoritization.com
+    </p>
+  </section>
+  <section class="large-6 columns tac">
+    <h5>Setup your matrix:</h5>
+    <div class="panel">
+      <ol class="small-block-grid-3 " type="1">
+        <%= render partial: "notice_step", locals: { icon: 'cart-plus', number: 1, text: 'Choose your value metric'}%>
+        <%= render partial: "notice_step", locals: { icon: 'industry', number: 2, text: 'Choose your cost metric'}%>
+        <%= render partial: "notice_step", locals: { icon: 'list-ul', number: 3, text: 'List your tasks'}%>
+      </ol>
+    </div>
+    <h5>Optimize your work:</h5>
+    <div class="panel ">
+      <ol class="small-block-grid-3" type="1">
+        <%= render partial: "notice_step", locals: { icon: 'ban', number: 1, text: 'Identify the traps'}%>
+        <%= render partial: "notice_step", locals: { icon: 'bolt', number: 2, text: 'Do the quick-wins'}%>
+        <%= render partial: "notice_step", locals: { icon: 'cut', number: 3, text: 'Cut the bigger tasks'}%>
+      </ol>
+    </div>
+  </section>
+</div>
+<section class="row taj ptxl">
+  <div class="large-12 columns">
+    <div class="panel mbn pbn">
+      <div class="row">
+        <div class="large-8 columns">
+          <p>
+            <h4>You want to give it a try?</h4>
+            <strong>No sign-up</strong>, just click!
+          </p>
+        </div>
+        <div class="large-4 columns tac">
+          <%= link_to 'Create a new matrix', {action: :new, controller: :matrices} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
