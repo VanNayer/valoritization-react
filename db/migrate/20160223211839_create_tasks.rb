@@ -1,6 +1,6 @@
 class CreateTasks < ActiveRecord::Migration
   def change
-    create_table :tasks do |t|
+    create_table :tasks, id: :uuid do |t|
       t.string :title
       t.integer :value
       t.integer :cost

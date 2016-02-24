@@ -13,7 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20160223212130) do
 
-  create_table "matrices", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+
+  create_table "matrices", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.string   "value"
     t.string   "cost"
@@ -21,7 +25,16 @@ ActiveRecord::Schema.define(version: 20160223212130) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "tasks" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "tasks", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "value"
+    t.integer  "cost"
+    t.string   "description"
+    t.boolean  "done"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.uuid     "matrix_id"
+  end
 
+  add_foreign_key "tasks", "matrices"
 end
