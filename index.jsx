@@ -24,9 +24,6 @@ retrieved_tasks.forEach((task) => {
   store.dispatch(addTask(task.id, task.title, task.value, task.cost))
 })
 
-
-
-
 require('./src/stylesheets/main.scss');
 render(
   <Provider store={store}>
