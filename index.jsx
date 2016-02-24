@@ -21,7 +21,7 @@ let store = createStore(
 
 
 retrieved_tasks.forEach((task) => {
-  store.dispatch(addTask(task.id, task.title, task.value, task.cost))
+  store.dispatch(addTask(task.id, task.title, task.value, task.cost, task.completed))
 })
 
 require('./src/stylesheets/main.scss');

@@ -25,7 +25,7 @@ describe('tasks reducer', () => {
         value: 8000,
         cost: 8888,
         completed: false
-      }], addTask('8-8-8-8-8', 'New', 7777, 77)))
+      }], addTask('8-8-8-8-8', 'New', 7777, 77, true)))
     .toEqual([{
       id: '0-1-2-3-4',
       title: 'task0',
@@ -37,7 +37,7 @@ describe('tasks reducer', () => {
       title: 'New',
       value: 7777,
       cost: 77,
-      completed: false
+      completed: true
     }])
   })
 
