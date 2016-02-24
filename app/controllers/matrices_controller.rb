@@ -1,31 +1,21 @@
 class MatricesController < ApplicationController
   before_action :set_matrix, only: [:show, :edit, :update, :destroy]
 
-  def uuid
-    render json: {id: SecureRandom.uuid}
-  end
-  # GET /matrices
-  # GET /matrices.json
   def index
     @matrices = Matrix.all
   end
 
-  # GET /matrices/1
-  # GET /matrices/1.json
   def show
+    @tasks = Matrix.find(params[:id]).tasks
   end
 
-  # GET /matrices/new
   def new
     @matrix = Matrix.new
   end
 
-  # GET /matrices/1/edit
   def edit
   end
 
-  # POST /matrices
-  # POST /matrices.json
   def create
     @matrix = Matrix.new(matrix_params)
 
@@ -40,8 +30,6 @@ class MatricesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /matrices/1
-  # PATCH/PUT /matrices/1.json
   def update
     respond_to do |format|
       if @matrix.update(matrix_params)
@@ -54,8 +42,6 @@ class MatricesController < ApplicationController
     end
   end
 
-  # DELETE /matrices/1
-  # DELETE /matrices/1.json
   def destroy
     @matrix.destroy
     respond_to do |format|

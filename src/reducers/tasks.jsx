@@ -1,7 +1,7 @@
 const task = (state, action) => {
   switch (action.type) {
     case 'ADD_TASK':
-      return {id: action.id, text: action.text, value: action.value, cost: action.cost, completed: false}
+      return {id: action.id, title: action.title, value: action.value, cost: action.cost, completed: false}
     case 'TOGGLE_TASK':
       if (state.id !== action.id) {
         return state
@@ -13,7 +13,7 @@ const task = (state, action) => {
       if (state.id !== action.id) {
         return state
       }
-      return Object.assign({}, state, {text: action.text, value: action.value, cost: action.cost})
+      return Object.assign({}, state, {title: action.title, value: action.value, cost: action.cost})
     default:
       return state
   }

@@ -26,7 +26,7 @@ const computeYPosition = (taskValue, extreme) => {
 const Task = ({
   onClick,
   completed,
-  text,
+  title,
   value,
   cost,
   extremeCoordinates
@@ -37,14 +37,14 @@ const Task = ({
           left: computeXPosition(cost, extremeCoordinates) + '%',
           bottom: computeYPosition(value, extremeCoordinates) + '%'
         }, taskStyle)}>
-    {text}
+    {title}
   </article>
 )
 
 Task.propTypes = {
   onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   cost: PropTypes.number.isRequired,
   extremeCoordinates: React.PropTypes.shape({maxCost: PropTypes.number.isRequired, maxValue: PropTypes.number.isRequired, minCost: PropTypes.number.isRequired, minValue: PropTypes.number.isRequired})

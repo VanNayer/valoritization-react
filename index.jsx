@@ -9,15 +9,23 @@ import loggerMiddleware from 'redux-logger';
 
 import App from './src/components/App.jsx'
 import valoritizationApp from './src/reducers/index.jsx'
-
+import {addTask} from './src/actions/actions.jsx'
 
 let store = createStore(
   valoritizationApp, //
-  INITIAL, // load matrix from server answer
+  {}, // load matrix from server answer
   applyMiddleware(
     thunkMiddleware, // lets us dispatch() functions
     loggerMiddleware() // middleware that logs actions
 ))
+
+
+retrieved_tasks.forEach((task) => {
+  store.dispatch(addTask(task.id, task.title, task.value, task.cost))
+})
+
+
+
 
 require('./src/stylesheets/main.scss');
 render(
