@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.integer :value
       t.integer :cost
       t.string :description
-      t.boolean :done
+      t.boolean :completed
 
       t.timestamps null: false
     end

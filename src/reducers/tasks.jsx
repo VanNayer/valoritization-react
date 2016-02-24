@@ -1,7 +1,7 @@
 const task = (state, action) => {
   switch (action.type) {
     case 'ADD_TASK':
-      return {id: action.id, title: action.title, value: action.value, cost: action.cost, completed: false}
+      return {id: action.id, title: action.title, value: action.value, cost: action.cost, completed: action.completed}
     case 'TOGGLE_TASK':
       if (state.id !== action.id) {
         return state

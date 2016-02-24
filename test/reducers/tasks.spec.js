@@ -4,7 +4,8 @@ import {addTask, updateTask, toggleTask} from '../../src/actions/actions.jsx'
 
 describe('tasks reducer', () => {
   it('should handle initial state', () => {
-    expect(tasks(undefined, {})).toEqual([])
+    expect(tasks(undefined, {}))
+    .toEqual([])
   })
 
   it('should handle ADD_TASK', () => {
@@ -24,8 +25,8 @@ describe('tasks reducer', () => {
         value: 8000,
         cost: 8888,
         completed: false
-      }], addTask('8-8-8-8-8', 'New', 7777, 77))
-    ).toEqual([{
+      }], addTask('8-8-8-8-8', 'New', 7777, 77)))
+    .toEqual([{
       id: '0-1-2-3-4',
       title: 'task0',
       value: 8000,
@@ -41,16 +42,12 @@ describe('tasks reducer', () => {
   })
 
   it('should handle TOGGLE_TASK', () => {
-    expect(
-      tasks([{completed: false,id: 1}, {completed: false,id: 0}],
-        toggleTask(1))
-    ).toEqual([{completed: true,id: 1}, {completed: false,id: 0}])
+    expect(tasks([{completed: false,id: 1}, {completed: false,id: 0}],toggleTask(1)))
+    .toEqual([{completed: true,id: 1}, {completed: false,id: 0}])
   })
 
   it('should handle UPDATE_TASK', () => {
-    expect(tasks([{
-      id: 0
-    }], updateTask(0, 'coucou', 22, 33)))
+    expect(tasks([{id: 0}], updateTask(0, 'coucou', 22, 33)))
     .toEqual([{
       title: 'coucou',
       value: 22,

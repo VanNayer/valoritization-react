@@ -1,11 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:update, :destroy]
 
-  def index
-    @tasks = Task.where(matrix_id: params[:matrix_id])
-    render json: { tasks: @tasks }
-  end
-
   # POST /tasks
   def create
     @task = Task.new(task_params)

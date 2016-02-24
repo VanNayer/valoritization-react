@@ -12,7 +12,6 @@ describe('extreme_coordinates reducer', () => {
       minValue: 0
     })
   })
-
   it('should handle ADD_TASK', () => {
     expect(extremeCoordinates(undefined, addTask(0, '', 4, 7)))
     .toEqual({
@@ -21,7 +20,6 @@ describe('extreme_coordinates reducer', () => {
       minCost: 0,
       minValue: 0
     })
-
     expect(extremeCoordinates(undefined,  addTask(0, '', 30, 30)))
     .toEqual({
       maxCost: 30,
@@ -29,7 +27,6 @@ describe('extreme_coordinates reducer', () => {
       minCost: 0,
       minValue: 0
     })
-
     expect(extremeCoordinates({maxCost: 40,maxValue: 40,minCost: 5,minValue: 5},  addTask(0, '', 0, 30)))
     .toEqual({
       maxCost: 40,
@@ -46,7 +43,5 @@ describe('extreme_coordinates reducer', () => {
       minCost: 0,
       minValue: 0
     })
-
   })
-
 })

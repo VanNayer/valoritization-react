@@ -1,8 +1,8 @@
 export const requestAddTask = (title, value, cost) => {
   return {type: 'REQUEST_ADD_TASK', title, value, cost}
 }
-export const addTask = (id, title, value, cost) => {
-  return {type: 'ADD_TASK', id, title, value, cost}
+export const addTask = (id, title, value, cost, completed = false) => {
+  return {type: 'ADD_TASK', id, title, value, cost, completed}
 }
 
 export const updateTask = (id, title, value, cost) => {

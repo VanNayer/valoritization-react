@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160224205322) do
     t.integer  "value"
     t.integer  "cost"
     t.string   "description"
-    t.boolean  "done",        default: false
+    t.boolean  "completed",   default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.uuid     "matrix_id"

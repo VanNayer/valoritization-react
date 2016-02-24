@@ -5,11 +5,11 @@ one:
   value: 1
   cost: 1
   description: MyString
-  done: false
+  completed: false
 
 two:
   title: MyString
   value: 1
   cost: 1
   description: MyString
-  done: false
+  completed: false
