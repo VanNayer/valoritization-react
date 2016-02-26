@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:update, :destroy]
+  before_action :set_task, only: [:update, :toggle, :destroy]
 
   # POST /tasks
   def create
@@ -14,7 +14,15 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   def update
     if @task.update(task_params)
-      render_task_as_json
+      render status: :accepted, nothing: true
+    else
+      render json: @task.errors, status: :unprocessable_entity
+    end
+  end
+
+  def toggle
+    if @task.update completed: !@task.completed
+      render status: :accepted, nothing: true
     else
       render json: @task.errors, status: :unprocessable_entity
     end
@@ -30,7 +38,7 @@ class TasksController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_task
-    @task = Task.find(params[:id])
+    @task = Task.find(params[:id] || params[:task_id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

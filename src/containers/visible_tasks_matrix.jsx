@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleTask } from '../actions/actions.jsx'
+import { callToggleTask } from '../actions/actions.jsx'
 import Matrix from '../components/matrix/matrix.jsx'
 
 const getVisibleTasks = (tasks, filter) => {
@@ -23,7 +23,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onTaskClick: (id) => {
-      dispatch(toggleTask(id))
+      dispatch(callToggleTask(id))
     }
   }
 }

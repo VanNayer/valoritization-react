@@ -17,10 +17,9 @@ export const toggleTask = (id) => {
   return {type: 'TOGGLE_TASK', id}
 }
 
-export const createTask = (title, value, cost) => {
+export const callCreateTask = (title, value, cost) => {
   return dispatch => {
-    dispatch(requestAddTask(title, value, cost))
-
+    dispatch(requestAddTask(title, value, cost));
     return fetch(new Request('tasks', {
       method: 'POST',
       headers: {
@@ -32,6 +31,34 @@ export const createTask = (title, value, cost) => {
       return response.json();
     }).then(function(json) {
       dispatch(addTask(json.id, title, value, cost))
+    }).catch((err) => {
+      console.log('err')
+    })
+  }
+}
+
+export const callUpdateTask = (id, title, value, cost, description) => {
+  return dispatch => {
+    return fetch(new Request('tasks/'+ id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify( {title, value, cost, description} )
+    })).then(() => {
+      dispatch(updateTask(id, title, value, cost, description))
+    }).catch((err) => {
+      console.log('err')
+    })
+  }
+}
+
+export const callToggleTask = (id) => {
+  return dispatch => {
+    return fetch(new Request('tasks/'+ id +'/toggle', {
+      method: 'PUT'
+    })).then(() => {
+      dispatch(toggleTask(id))
     }).catch((err) => {
       console.log('err')
     })
