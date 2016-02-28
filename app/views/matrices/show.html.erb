@@ -5,10 +5,10 @@
 <div class="valoritization" id="root">
   <%= javascript_tag do %>
     var retrieved_tasks = <%=@tasks.to_json.html_safe %>
+    var matrix_infos = <%=@matrix.to_json.html_safe %>
   <% end %>
 </div>
 <script src="/bundle.js"></script>
 
 <%= link_to 'Edit', edit_matrix_path(@matrix) %>
-|
 <%= link_to 'Back', matrices_path %>

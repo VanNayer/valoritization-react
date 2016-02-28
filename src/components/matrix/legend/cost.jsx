@@ -11,6 +11,7 @@ var matrixLegendStyle = {
 
 const Cost = ({maxCost}) => (
   <div style={matrixLegendStyle}>
+    <span style={{position: 'absolute', right: '50%'}}>{matrix_infos.cost}</span>
     <span style={{position: 'absolute', right: '1%'}}>{maxCost}</span>
   </div>
 )

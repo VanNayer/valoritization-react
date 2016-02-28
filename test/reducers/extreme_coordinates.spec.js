@@ -44,4 +44,15 @@ describe('extreme_coordinates reducer', () => {
       minValue: 0
     })
   })
+  // it('should handle DELETE_TASK', () => {
+  //   it('when task is an extremist', () => {
+  //     expect(extremeCoordinates({maxCost: 11, maxValue: 11, minCost: 0, minValue: 0}, deleteTask(0)))
+  //     .toEqual({
+  //       maxCost: 10,
+  //       maxValue: 10,
+  //       minCost: 0,
+  //       minValue: 0
+  //     })
+  //   })
+  // })
 })

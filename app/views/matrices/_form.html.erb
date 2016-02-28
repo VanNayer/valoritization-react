@@ -16,14 +16,23 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :value %><br>
-    <%= f.text_field :value %>
+    Choose the metric for the <%= f.label :value %><br>
+    <%= f.text_field :value, list: :value_types, placeholder: "Euros, Dollars, hours, ... " %>
   </div>
   <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
+    Choose the metric for the <%= f.label :cost %><br>
+    <%= f.text_field :cost, list: :value_types, placeholder: "Euros, Dollars, hours, ... " %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<datalist id="value_types">
+    <option value="Euros"></option>
+    <option value="Dollars"></option>
+    <option value="Days"></option>
+    <option value="Hours"></option>
+    <option value="Minutes"></option>
+    <option value="Scale"></option>
+</datalist>
