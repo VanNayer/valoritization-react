@@ -7,13 +7,16 @@ import InlineEdit from 'react-edit-inline'
 let dispatchEdit = (dispatch, task, field, input) => {
   switch (field) {
     case 'title':
-      dispatch(callUpdateTask(task.id, input.enteredValue, task.value, task.cost));
+      dispatch(callUpdateTask(task.id, input.enteredValue, task.value, task.cost, task.description));
       break;
     case 'value':
-      dispatch(callUpdateTask(task.id, task.title, parseInt(input.enteredValue), task.cost));
+      dispatch(callUpdateTask(task.id, task.title, parseInt(input.enteredValue), task.cost, task.description));
       break;
     case 'cost':
-      dispatch(callUpdateTask(task.id, task.title, task.value, parseInt(input.enteredValue)));
+      dispatch(callUpdateTask(task.id, task.title, task.value, parseInt(input.enteredValue), task.description));
+      break;
+    case 'description':
+      dispatch(callUpdateTask(task.id, task.title, task.value, task.cost, input.enteredValue));
       break;
     default:
       console.error('The field ${field} does not exist for a task.');
@@ -21,6 +24,7 @@ let dispatchEdit = (dispatch, task, field, input) => {
 }
 
 let EditTaskField = ({task, field, validationFn, dispatch}) => {
+  console.log(task, field, task[field])
   return (
         <InlineEdit
           validate={validationFn}

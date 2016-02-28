@@ -3,12 +3,13 @@ import * as actions from '../../src/actions/actions.jsx'
 
 describe('task actions', () => {
   it('addTask should create ADD_TASK action', () => {
-    expect(actions.addTask(0, 'Use Redux', 34, 57, true)).toEqual({
+    expect(actions.addTask(0, 'Use Redux', 34, 57, 'une description', true)).toEqual({
       type: 'ADD_TASK',
       id: 0,
       value: 34,
       cost: 57,
       title: 'Use Redux',
+      description: 'une description',
       completed: true
     })
   })
@@ -35,12 +36,13 @@ describe('task actions', () => {
   })
 
   it('updateTask should create UPDATE_TASK action', () => {
-    expect(actions.updateTask(1, 'Michel', 3, 4)).toEqual({
+    expect(actions.updateTask(1, 'Michel', 3, 4, 'et oui')).toEqual({
       type: 'UPDATE_TASK',
       id: 1,
       title: 'Michel',
       value: 3,
-      cost: 4
+      cost: 4,
+      description: 'et oui'
     })
   })
 })

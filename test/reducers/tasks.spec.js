@@ -9,34 +9,18 @@ describe('tasks reducer', () => {
   })
 
   it('should handle ADD_TASK', () => {
-    expect(tasks([], addTask('0-1-2-3-4', 'task0', 8000, 8888)))
-    .toEqual([{
-      id: '0-1-2-3-4',
-      title: 'task0',
-      value: 8000,
-      cost: 8888,
-      completed: false
-    }])
-
     expect(
       tasks([{
-        id: '0-1-2-3-4',
-        title: 'task0',
-        value: 8000,
-        cost: 8888,
-        completed: false
-      }], addTask('8-8-8-8-8', 'New', 7777, 77, true)))
+        id: '0-1-2-3-4'
+      }], addTask('8-8-8-8-8', 'New', 7777, 77, 'coucou', true)))
     .toEqual([{
-      id: '0-1-2-3-4',
-      title: 'task0',
-      value: 8000,
-      cost: 8888,
-      completed: false
+      id: '0-1-2-3-4'
     }, {
       id: '8-8-8-8-8',
       title: 'New',
       value: 7777,
       cost: 77,
+      description: 'coucou',
       completed: true
     }])
   })
@@ -52,12 +36,13 @@ describe('tasks reducer', () => {
   })
 
   it('should handle UPDATE_TASK', () => {
-    expect(tasks([{id: 0}], updateTask(0, 'coucou', 22, 33)))
+    expect(tasks([{id: 0}], updateTask(0, 'coucou', 22, 33, 'desc')))
     .toEqual([{
       title: 'coucou',
       value: 22,
       cost: 33,
-      id: 0
+      id: 0,
+      description: 'desc'
     }])
   })
 

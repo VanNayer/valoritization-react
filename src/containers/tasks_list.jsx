@@ -12,6 +12,7 @@ let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
           <th>Title</th>
           <th>Value</th>
           <th>Cost</th>
+          <th>Description</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -21,6 +22,7 @@ let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
           <td><EditTaskField task={task} field='title' validationFn={(inputText) => (inputText.length > 0 && inputText.length < 64)}/></td>
           <td><EditTaskField task={task} field='value' validationFn={(inputValue) => Number.isInteger(parseInt(inputValue))}/></td>
           <td><EditTaskField task={task} field='cost' validationFn={(inputCost) => Number.isInteger(parseInt(inputCost))}/></td>
+          <td><EditTaskField task={task} field='description'/></td>
           <td>
             <button onClick={() => {
               onTaskClick(task.id);
