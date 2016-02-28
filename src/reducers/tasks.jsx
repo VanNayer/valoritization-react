@@ -29,6 +29,8 @@ const tasks = (state = [], action) => {
     case 'TOGGLE_TASK':
     case 'UPDATE_TASK':
       return state.map(taskState => task(taskState, action))
+    case 'DELETE_TASK':
+      return state.filter((taskState) => { return taskState.id != action.id })
     default:
       return state
   }

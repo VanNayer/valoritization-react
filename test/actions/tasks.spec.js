@@ -27,6 +27,13 @@ describe('task actions', () => {
     })
   })
 
+  it('deleteTask should create DELETE_TASK action', () => {
+    expect(actions.deleteTask(1)).toEqual({
+      type: 'DELETE_TASK',
+      id: 1
+    })
+  })
+
   it('updateTask should create UPDATE_TASK action', () => {
     expect(actions.updateTask(1, 'Michel', 3, 4)).toEqual({
       type: 'UPDATE_TASK',

@@ -17,7 +17,11 @@ export const toggleTask = (id) => {
   return {type: 'TOGGLE_TASK', id}
 }
 
-export const callCreateTask = (title, value, cost) => {
+export const deleteTask = (id) => {
+  return {type: 'DELETE_TASK', id}
+}
+
+export const callAddTask = (title, value, cost) => {
   return dispatch => {
     dispatch(requestAddTask(title, value, cost));
     return fetch(new Request('tasks', {
@@ -59,6 +63,18 @@ export const callToggleTask = (id) => {
       method: 'PUT'
     })).then(() => {
       dispatch(toggleTask(id))
+    }).catch((err) => {
+      console.log('err')
+    })
+  }
+}
+
+export const callDeleteTask = (id) => {
+  return dispatch => {
+    return fetch(new Request('tasks/'+ id, {
+      method: 'DELETE'
+    })).then(() => {
+      dispatch(deleteTask(id))
     }).catch((err) => {
       console.log('err')
     })

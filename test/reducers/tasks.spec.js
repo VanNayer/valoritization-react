@@ -1,6 +1,6 @@
 import expect from 'expect'
 import tasks from '../../src/reducers/tasks.jsx'
-import {addTask, updateTask, toggleTask} from '../../src/actions/actions.jsx'
+import {addTask, updateTask, toggleTask, deleteTask} from '../../src/actions/actions.jsx'
 
 describe('tasks reducer', () => {
   it('should handle initial state', () => {
@@ -44,6 +44,11 @@ describe('tasks reducer', () => {
   it('should handle TOGGLE_TASK', () => {
     expect(tasks([{completed: false,id: 1}, {completed: false,id: 0}],toggleTask(1)))
     .toEqual([{completed: true,id: 1}, {completed: false,id: 0}])
+  })
+
+  it('should handle DELETE_TASK', () => {
+    expect(tasks([{id: 1}, {id: 0}], deleteTask(1)))
+    .toEqual([{id: 0}])
   })
 
   it('should handle UPDATE_TASK', () => {
