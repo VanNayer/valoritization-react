@@ -2,7 +2,7 @@
   <%=image_tag('welcome-banner.jpg')%>
 </figure>
 <div class="row mtxl">
-  <section class="large-6 columns taj">
+  <section class="col-lg-6 columns taj">
     <h4 class="mtl">Overwhelmed?</h4>
     <p>
       Valoritization is a simple tool to step back and find where to start. It works for every situation where you have too much on your plate; if you want an efficient way to deal with it, you just found it!
@@ -22,10 +22,10 @@
       Feel free to add a task you wish to be added to Valoritization.com
     </p>
   </section>
-  <section class="large-6 columns tac">
+  <section class="col-lg-6">
     <h5>Setup your matrix:</h5>
     <div class="panel">
-      <ol class="small-block-grid-3 " type="1">
+      <ol class="col-sm-3" type="1">
         <%= render partial: "notice_step", locals: { icon: 'cart-plus', number: 1, text: 'Choose your value metric'}%>
         <%= render partial: "notice_step", locals: { icon: 'industry', number: 2, text: 'Choose your cost metric'}%>
         <%= render partial: "notice_step", locals: { icon: 'list-ul', number: 3, text: 'List your tasks'}%>
@@ -33,7 +33,7 @@
     </div>
     <h5>Optimize your work:</h5>
     <div class="panel ">
-      <ol class="small-block-grid-3" type="1">
+      <ol class="col-sm-3" type="1">
         <%= render partial: "notice_step", locals: { icon: 'ban', number: 1, text: 'Identify the traps'}%>
         <%= render partial: "notice_step", locals: { icon: 'bolt', number: 2, text: 'Do the quick-wins'}%>
         <%= render partial: "notice_step", locals: { icon: 'cut', number: 3, text: 'Cut the bigger tasks'}%>
@@ -42,16 +42,16 @@
   </section>
 </div>
 <section class="row taj ptxl">
-  <div class="large-12 columns">
+  <div class="col-lg-12 columns">
     <div class="panel mbn pbn">
       <div class="row">
-        <div class="large-8 columns">
+        <div class="col-lg-8 columns">
           <p>
             <h4>You want to give it a try?</h4>
             <strong>No sign-up</strong>, just click!
           </p>
         </div>
-        <div class="large-4 columns tac">
+        <div class="col-lg-4 columns tac">
           <%= link_to 'Create a new matrix', {action: :new, controller: :matrices} %>
         </div>
       </div>

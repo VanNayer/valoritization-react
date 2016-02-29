@@ -7,31 +7,23 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header class="dispib">
-      <span class="title prxl plxl">Valoritization.com</span>
-      <nav class="dispib mlxl">
-        <ul class="button-group">
-          <li>
-            <%= link_to fa_icon('home'), {controller: :welcome}, title: 'Home' %>
-          </li>
-          <li>
-            <%= link_to fa_icon('file-o'), {action: :new, controller: :matrices}, title: 'Create a new matrix' %>
-          </li>
-          <li>
-            <%= link_to fa_icon('list-alt'), {controller: :matrices}, title: 'List matrices' %>
-          </li>
-          <li>
-            <%= link_to fa_icon('envelope'), {controller: :about}, title: 'About' %>
-          </li>
-        </ul>
-      </nav>
-    </header>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <span class="title prxl plxl">Valoritization.com</span>
+        <%= link_to fa_icon('home'), {controller: :welcome}, title: 'Home', class: 'btn btn-default navbar-btn'  %>
+        <%= link_to fa_icon('file-o'), {action: :new, controller: :matrices}, title: 'Create a new matrix', class: 'btn btn-default navbar-btn'  %>
+        <%= link_to fa_icon('list-alt'), {controller: :matrices}, title: 'List matrices', class: 'btn btn-default navbar-btn'  %>
+        <%= link_to fa_icon('envelope'), {controller: :about}, title: 'About', class: 'btn btn-default navbar-btn' %>
+      </div>
+    </nav>
 
     <%= yield %>
 
-    <footer class="bottom-bar">
-      <span class="prl">&copy; Valoritization 2015</span>
-    </footer>
-
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <span class="prl">&copy; Valoritization 2015</span>
+      </div>
+    </nav>
   </body>
 </html>

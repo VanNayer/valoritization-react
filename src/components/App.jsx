@@ -5,9 +5,10 @@ import TasksList from '../containers/tasks_list.jsx'
 
 const App = () => (
   <div>
+    <Footer/>
     <VisibleTasksMatrix/>
     <TasksList/>
-    <Footer/>
+
   </div>
 )
 export default App
