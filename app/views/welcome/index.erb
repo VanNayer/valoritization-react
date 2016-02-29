@@ -1,9 +1,12 @@
-<figure class="banner tac man mtxl pan">
-  <%=image_tag('welcome-banner.jpg')%>
-</figure>
-<div class="row mtxl">
-  <section class="col-lg-6 columns taj">
-    <h4 class="mtl">Overwhelmed?</h4>
+<div class="page-header mtn pbn">
+  <figure class="jumbotron ptn pbn" style="background-color: black;">
+    <%=image_tag('welcome-banner.jpg', class: 'center-block', style: 'height:200px;')%>
+  </figure>
+</div>
+
+<div class="row maxl">
+  <section class="col-lg-6">
+    <h2 class="mtl">Overwhelmed?</h4>
     <p>
       Valoritization is a simple tool to step back and find where to start. It works for every situation where you have too much on your plate; if you want an efficient way to deal with it, you just found it!
     </p>
@@ -23,38 +26,46 @@
     </p>
   </section>
   <section class="col-lg-6">
-    <h5>Setup your matrix:</h5>
-    <div class="panel">
-      <ol class="col-sm-3" type="1">
-        <%= render partial: "notice_step", locals: { icon: 'cart-plus', number: 1, text: 'Choose your value metric'}%>
-        <%= render partial: "notice_step", locals: { icon: 'industry', number: 2, text: 'Choose your cost metric'}%>
-        <%= render partial: "notice_step", locals: { icon: 'list-ul', number: 3, text: 'List your tasks'}%>
-      </ol>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Setup your matrix:</h4>
+      </div>
+      <div class="panel-body">
+        <ol class="col-sm-4">
+          <%= render partial: "notice_step", locals: { icon: 'cart-plus', number: 1, text: 'Choose your value metric'}%>
+        </ol>
+        <ol class="col-sm-4">
+          <%= render partial: "notice_step", locals: { icon: 'industry', number: 2, text: 'Choose your cost metric'}%>
+        </ol>
+        <ol class="col-sm-4">
+          <%= render partial: "notice_step", locals: { icon: 'list-ul', number: 3, text: 'List your tasks'}%>
+        </ol>
+      </div>
     </div>
-    <h5>Optimize your work:</h5>
-    <div class="panel ">
-      <ol class="col-sm-3" type="1">
-        <%= render partial: "notice_step", locals: { icon: 'ban', number: 1, text: 'Identify the traps'}%>
-        <%= render partial: "notice_step", locals: { icon: 'bolt', number: 2, text: 'Do the quick-wins'}%>
-        <%= render partial: "notice_step", locals: { icon: 'cut', number: 3, text: 'Cut the bigger tasks'}%>
-      </ol>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Optimize your work:</h4>
+      </div>
+      <div class="panel-body">
+        <ol class="col-sm-4">
+          <%= render partial: "notice_step", locals: { icon: 'ban', number: 1, text: 'Identify the traps'}%>
+        </ol>
+        <ol class="col-sm-4">
+          <%= render partial: "notice_step", locals: { icon: 'bolt', number: 2, text: 'Do the quick-wins'}%>
+        </ol>
+        <ol class="col-sm-4">
+          <%= render partial: "notice_step", locals: { icon: 'cut', number: 3, text: 'Cut the bigger tasks'}%>
+        </ol>
+      </div>
     </div>
   </section>
 </div>
-<section class="row taj ptxl">
-  <div class="col-lg-12 columns">
-    <div class="panel mbn pbn">
-      <div class="row">
-        <div class="col-lg-8 columns">
-          <p>
-            <h4>You want to give it a try?</h4>
-            <strong>No sign-up</strong>, just click!
-          </p>
-        </div>
-        <div class="col-lg-4 columns tac">
-          <%= link_to 'Create a new matrix', {action: :new, controller: :matrices} %>
-        </div>
-      </div>
-    </div>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h4>You want to give it a try?</h4>
+  </div>
+  <div class="panel-body">
+    <strong>No sign-up</strong>, just click! &nbsp;
+    <%= link_to 'Create a new matrix', {action: :new, controller: :matrices}, class: 'btn btn-primary navbar-btn' %>
   </div>
 </section>

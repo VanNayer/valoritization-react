@@ -16,3 +16,106 @@
 @import "bootstrap";
 
 body { padding-top: 70px; padding-bottom: 70px;}
+
+
+@mixin margin-left($value){ margin-left: $value }
+@mixin margin-right($value){ margin-right: $value }
+@mixin padding-left($value){ padding-left: $value }
+@mixin padding-right($value){ padding-right: $value }
+
+// Spacing
+$spacingXs:         5px !default;
+$spacingS:          10px !default;
+$spacingM:          15px !default;
+$spacingL:          20px !default;
+$spacingXl:         30px !default;
+
+
+// Paddings
+
+// None
+.pan         { padding: 0 !important; }
+.ptn, .pvn   { padding-top: 0 !important; }
+.prn, .phn   { @include padding-right( 0 !important); }
+.pbn, .pvn   { padding-bottom: 0 !important; }
+.pln, .phn   { @include padding-left( 0 !important); }
+
+// Extra Small
+.paxs        { padding: $spacingXs !important; }
+.ptxs, .pvxs { padding-top: $spacingXs !important; }
+.prxs, .phxs { @include padding-right( $spacingXs !important); }
+.pbxs, .pvxs { padding-bottom: $spacingXs !important; }
+.plxs, .phxs { @include padding-left( $spacingXs !important); }
+
+// Small
+.pas         { padding: $spacingS !important; }
+.pts, .pvs   { padding-top: $spacingS !important; }
+.prs, .phs   { @include padding-right( $spacingS !important); }
+.pbs, .pvs   { padding-bottom: $spacingS !important; }
+.pls, .phs   { @include padding-left( $spacingS !important); }
+
+// Medium
+.pam         { padding: $spacingM !important; }
+.ptm, .pvm   { padding-top: $spacingM !important; }
+.prm, .phm   { @include padding-right( $spacingM !important); }
+.pbm, .pvm   { padding-bottom: $spacingM !important; }
+.plm, .phm   { @include padding-left( $spacingM !important); }
+
+// Large
+.pal         { padding: $spacingL !important; }
+.ptl, .pvl   { padding-top: $spacingL !important; }
+.prl, .phl   { @include padding-right( $spacingL !important); }
+.pbl, .pvl   { padding-bottom: $spacingL !important; }
+.pll, .phl   { @include padding-left( $spacingL !important); }
+
+// Extra Large
+.paxl        { padding: $spacingXl !important; }
+.ptxl, .pvxl { padding-top: $spacingXl !important; }
+.prxl, .phxl { @include padding-right( $spacingXl !important); }
+.pbxl, .pvxl { padding-bottom: $spacingXl !important; }
+.plxl, .phxl { @include padding-left( $spacingXl !important); }
+
+
+// Margins
+
+// None
+.man         { margin: 0 !important; }
+.mtn, .mvn   { margin-top: 0 !important; }
+.mrn, .mhn   { @include margin-right( 0 !important); }
+.mbn, .mvn   { margin-bottom: 0 !important; }
+.mln, .mhn   { @include margin-left(0 !important); }
+
+// Extra Small
+.maxs        { margin: $spacingXs !important; }
+.mtxs, .mvxs { margin-top: $spacingXs !important; }
+.mrxs, .mhxs { @include margin-right( $spacingXs !important); }
+.mbxs, .mvxs { margin-bottom: $spacingXs !important; }
+.mlxs, .mhxs { @include margin-left($spacingXs !important); }
+
+// Small
+.mas         { margin: $spacingS !important; }
+.mts, .mvs   { margin-top: $spacingS !important; }
+.mrs, .mhs   { @include margin-right( $spacingS !important); }
+.mbs, .mvs   { margin-bottom: $spacingS !important; }
+.mls, .mhs   { @include margin-left($spacingS !important); }
+
+// Medium
+.mam         { margin: $spacingM !important; }
+.mtm, .mvm   { margin-top: $spacingM !important; }
+.mrm, .mhm   { @include margin-right( $spacingM !important); }
+.mbm, .mvm   { margin-bottom: $spacingM !important; }
+.mlm, .mhm   { @include margin-left($spacingM !important); }
+
+// Large
+.mal         { margin: $spacingL !important; }
+.mtl, .mvl   { margin-top: $spacingL !important; }
+.mrl, .mhl   { @include margin-right( $spacingL !important); }
+.mbl, .mvl   { margin-bottom: $spacingL !important; }
+.mll, .mhl   { @include margin-left($spacingL !important); }
+
+// Extra Large
+.maxl        { margin: $spacingXl !important; }
+.mtxl, .mvxl { margin-top: $spacingXl !important; }
+.mrxl, .mhxl { @include margin-right( $spacingXl !important); }
+.mbxl, .mvxl { margin-bottom: $spacingXl !important; }
+.mlxl, .mhxl { @include margin-left($spacingXl !important); }
