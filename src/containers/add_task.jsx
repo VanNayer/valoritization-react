@@ -11,10 +11,10 @@ let AddTask = ({dispatch}) => {
 
   return (
     <tr>
-      <td><input ref={node => {title = node}}/></td>
-      <td><input ref={node => {value = node}}/></td>
-      <td><input ref={node => {cost = node}}/></td>
-      <td><input ref={node => {description = node}}/></td>
+      <td><input ref={node => {title = node}} className='form-control'/></td>
+      <td><input ref={node => {value = node}} className='form-control'/></td>
+      <td><input ref={node => {cost = node}} className='form-control'/></td>
+      <td><input ref={node => {description = node}} className='form-control'/></td>
       <td>
         <button onClick={() => {
           dispatch(callAddTask(title.value, parseInt(value.value), parseInt(cost.value), description.value));
@@ -22,7 +22,9 @@ let AddTask = ({dispatch}) => {
           value.value = '';
           cost.value = '';
           description.value = '';
-        }}>
+        }}
+        className='btn btn-primary  form-control'
+        >
           Add Task
         </button>
       </td>

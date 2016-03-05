@@ -1,14 +1,13 @@
 import React from 'react'
-import Footer from './footer.jsx'
+import Header from './header.jsx'
 import VisibleTasksMatrix from '../containers/visible_tasks_matrix.jsx'
 import TasksList from '../containers/tasks_list.jsx'
 
 const App = () => (
   <div>
-    <Footer/>
+    <Header/>
     <VisibleTasksMatrix/>
     <TasksList/>
-
   </div>
 )
 export default App

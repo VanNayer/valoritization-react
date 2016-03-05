@@ -6,7 +6,7 @@ var matrixLegendStyle = {
   color: 'white',
   width: '100%',
   height: '20px',
-  bottom: 0
+  bottom: '-20px'
 }
 
 const Cost = ({maxCost}) => (

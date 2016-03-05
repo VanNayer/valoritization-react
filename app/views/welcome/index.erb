@@ -1,10 +1,10 @@
 <div class="page-header mtn pbn">
-  <figure class="jumbotron ptn pbn" style="background-color: black;">
-    <%=image_tag('welcome-banner.jpg', class: 'center-block', style: 'height:200px;')%>
+  <figure class="jumbotron ptn pbn" style="background-color: #222; height: 200px; overflow: hidden">
+    <%=image_tag('welcome-banner.jpg', class: 'center-block', style: 'height:250px; background-position: center center; background-repeat: no-repeat;')%>
   </figure>
 </div>
 
-<div class="row maxl">
+<div class="row mlxl mrxl">
   <section class="col-lg-6">
     <h2 class="mtl">Overwhelmed?</h4>
     <p>
@@ -30,7 +30,7 @@
       <div class="panel-heading">
         <h4>Setup your matrix:</h4>
       </div>
-      <div class="panel-body">
+      <div class="panel-body pan">
         <ol class="col-sm-4">
           <%= render partial: "notice_step", locals: { icon: 'cart-plus', number: 1, text: 'Choose your value metric'}%>
         </ol>
@@ -46,7 +46,7 @@
       <div class="panel-heading">
         <h4>Optimize your work:</h4>
       </div>
-      <div class="panel-body">
+      <div class="panel-body pan">
         <ol class="col-sm-4">
           <%= render partial: "notice_step", locals: { icon: 'ban', number: 1, text: 'Identify the traps'}%>
         </ol>

@@ -17,7 +17,7 @@ var matrixHeight = {
 };
 
 const Matrix = ({tasks, onTaskClick, extremeCoordinates}) => (
-  <div style={matrixHeight} >
+  <div style={matrixHeight} className='maxl' >
     <Cost maxCost={extremeCoordinates.maxCost}/>
     <Value maxValue={extremeCoordinates.maxValue}/>
     <img style={Object.assign(imgStyle, matrixHeight)} src="/matrix-background.png" />

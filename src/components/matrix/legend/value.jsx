@@ -4,7 +4,8 @@ var matrixLegendStyle = {
   position: 'absolute',
   backgroundColor: 'black',
   color: 'white',
-  width: '20px',
+  width: '30px',
+  left: '-30px',
   height: '100%'
 }
 

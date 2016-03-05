@@ -1,38 +1,52 @@
 <%= form_for(@matrix) do |f| %>
-  <% if @matrix.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@matrix.errors.count, "error") %> prohibited this matrix from being saved:</h2>
+<% if @matrix.errors.any? %>
+<div id="error_explanation">
+  <h3><%= pluralize(@matrix.errors.count, "error") %>prohibited this matrix from being saved:</h2>
+  <ul>
+    <% @matrix.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-      <ul>
-      <% @matrix.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<fieldset class="form-group">
+  <%= f.label :name%><br>
+  <%= f.text_field :name, class: 'form-control', placeholder: "What is matrix purpose?" %>
+</fieldset>
+<fieldset class="form-group">
+  <%= f.label :value %><br>
+  <%= f.text_field :value, list: :value_types, placeholder: "Choose a metric for the cost: Euros, Dollars, hours, ... ", class: 'form-control'  %>
+</fieldset>
+<fieldset class="form-group">
+  <%= f.label :cost %><br>
+  <%= f.text_field :cost, list: :value_types, placeholder: "Choose a metric for the value: Euros, Dollars, hours, ... ", class: 'form-control'  %>
+</fieldset>
+<fieldset class="form-group">
+  <%= f.label 'Sharing options' %><br>
+  <div class="radio">
+    <label>
+      <input type="radio" name="shareOptions" id="shareOptions1" value="public" checked>
+      I want to share this matrix to the world.
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="shareOptions" id="shareOptions2" value="private">
+      Only people with the link can see and use the matrix.
+    </label>
+  </div>
+</fieldset>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    Choose the metric for the <%= f.label :value %><br>
-    <%= f.text_field :value, list: :value_types, placeholder: "Euros, Dollars, hours, ... " %>
-  </div>
-  <div class="field">
-    Choose the metric for the <%= f.label :cost %><br>
-    <%= f.text_field :cost, list: :value_types, placeholder: "Euros, Dollars, hours, ... " %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= f.submit class: "btn btn-primary" %>
+
 <% end %>
 
 <datalist id="value_types">
-    <option value="Euros"></option>
-    <option value="Dollars"></option>
-    <option value="Days"></option>
-    <option value="Hours"></option>
-    <option value="Minutes"></option>
-    <option value="Scale"></option>
+  <option value="Euros"></option>
+  <option value="Dollars"></option>
+  <option value="Days"></option>
+  <option value="Hours"></option>
+  <option value="Minutes"></option>
+  <option value="Scale"></option>
 </datalist>

@@ -6,7 +6,7 @@ import {callDeleteTask} from '../actions/actions.jsx'
 
 let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
   return (
-    <table>
+    <table className='table table-striped'>
       <thead>
         <tr>
           <th>Title</th>
@@ -26,7 +26,8 @@ let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
           <td>
             <button onClick={() => {
               onTaskClick(task.id);
-            }}>
+            }}
+            className='btn btn-default form-control'>
               Delete Task
             </button>
           </td>

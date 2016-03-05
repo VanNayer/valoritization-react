@@ -28,11 +28,12 @@ let EditTaskField = ({task, field, validationFn, dispatch}) => {
   return (
         <InlineEdit
           validate={validationFn}
-          activeClassName="editing"
+          activeClassName="editing form-control"
           text={task[field].toString()}
           paramName="enteredValue"
           change={(input) => dispatchEdit(dispatch, task, field, input)}
           style={{display: 'inline-block'}}
+
           />
   )
 }

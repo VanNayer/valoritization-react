@@ -1,5 +1,11 @@
-<h1>New Matrix</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', matrices_path %>
+<div class="row mlxl mrxl">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Create your new Matrix:</h2>
+    </div>
+    <div class="panel-body">
+      <%= render 'form' %>
+    </div>
+  </div>
+  <%= link_to 'Back', matrices_path, class: 'btn btn-default' %>
+</div>
