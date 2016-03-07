@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MatricesControllerTest < ActionController::TestCase
   setup do
-    @matrix = matrices(:one)
+    @matrix = create :matrix
   end
 
   test "should get index" do
@@ -21,6 +21,17 @@ class MatricesControllerTest < ActionController::TestCase
       post :create, matrix: { cost: @matrix.cost, name: @matrix.name, value: @matrix.value }
     end
 
+    assert_redirected_to matrix_path(assigns(:matrix))
+  end
+
+  test 'create matrix when logged in should associate user' do
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    user = create :user
+    # user.confirm! # or set a confirmed_at inside the factory. Only necessary if you are using the "confirmable" module
+    sign_in user
+
+    post :create, matrix: { cost: @matrix.cost, name: @matrix.name, value: @matrix.value }
+    assert_equal user, Matrix.all.first.user
     assert_redirected_to matrix_path(assigns(:matrix))
   end
 

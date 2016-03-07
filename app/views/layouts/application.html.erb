@@ -13,14 +13,29 @@
           <p class="h3" style="height:100%; color: white;">Valoritization.com</span>
         </div>
         <div class='col-md-3'>
-          <%= link_to fa_icon('home'), {controller: :welcome}, title: 'Home', class: 'btn btn-primary navbar-btn'  %>
-          <%= link_to fa_icon('file-o'), {action: :new, controller: :matrices}, title: 'Create a new matrix', class: 'btn btn-primary navbar-btn'  %>
-          <%= link_to fa_icon('list-alt'), {controller: :matrices}, title: 'List matrices', class: 'btn btn-primary navbar-btn'  %>
-          <%= link_to fa_icon('envelope'), {controller: :about}, title: 'About', class: 'btn btn-primary navbar-btn' %>
+          <%= link_to fa_icon('home'), root_path, title: 'Home', class: 'btn btn-primary navbar-btn'  %>
+          <%= link_to fa_icon('file-o'), new_matrix_path, title: 'Create a new matrix', class: 'btn btn-primary navbar-btn'  %>
+          <%= link_to fa_icon('list-alt'), matrices_path, title: 'List matrices', class: 'btn btn-primary navbar-btn'  %>
+          <%= link_to fa_icon('envelope'), about_path, title: 'About', class: 'btn btn-primary navbar-btn' %>
+        </div>
+        <div class='col-md-3'>
+          <% if user_signed_in? %>
+            <%= link_to "#{fa_icon('user')}&nbsp;My account".html_safe, edit_user_registration_path, class: 'btn btn-primary navbar-btn'  %>
+            <%= link_to "#{fa_icon('user-times')}&nbsp;Log out".html_safe, destroy_user_session_path, :method=>'delete', class: 'btn btn-primary navbar-btn'  %>
+          <% else %>
+            <%= link_to "#{fa_icon('user-plus')}&nbsp;Sign in".html_safe, new_user_session_path, class: 'btn btn-primary navbar-btn'  %>
+          <% end %>
         </div>
       </div>
     </nav>
-    <%= yield %>
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+
+    <div class="row mtm mlxl mrxl">
+      <%= yield %>
+    </div>
+
     <nav class="navbar navbar-default navbar-fixed-bottom hidden-xs man pan">
       <div class="container">
         <span class="prl">&copy; Valoritization 2015</span>

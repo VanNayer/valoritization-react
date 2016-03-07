@@ -15,7 +15,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body { padding-top: 57px; padding-bottom: 70px;}
+body {
+  padding-top: 57px;
+  padding-bottom: 70px;
+  text-align: justify;
+}
 
 
 @mixin margin-left($value){ margin-left: $value }

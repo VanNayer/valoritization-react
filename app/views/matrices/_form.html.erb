@@ -23,18 +23,14 @@
   <%= f.text_field :cost, list: :value_types, placeholder: "Choose a metric for the value: Euros, Dollars, hours, ... ", class: 'form-control'  %>
 </fieldset>
 <fieldset class="form-group">
-  <%= f.label 'Sharing options' %><br>
-  <div class="radio">
-    <label>
-      <input type="radio" name="shareOptions" id="shareOptions1" value="public" checked>
-      I want to share this matrix to the world.
-    </label>
+  <%= f.label :shared, 'Sharing options' %>
+  <div>
+      <%= f.radio_button :shared, 'true', :checked => true %>
+      <%= f.label :shared_true, 'I want to share this matrix to the world.' %>
   </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="shareOptions" id="shareOptions2" value="private">
-      Only people with the link can see and use the matrix.
-    </label>
+  <div class="radio <%= 'disabled' if !user_signed_in? %>">
+    <%= f.radio_button :shared, 'false', checked: false, disabled: !user_signed_in?  %>
+    <%= f.label :shared_false, 'Only people with the link can see and use the matrix.' %>
   </div>
 </fieldset>
 

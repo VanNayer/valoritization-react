@@ -2,7 +2,8 @@ class MatricesController < ApplicationController
   before_action :set_matrix, only: [:show, :edit, :update, :destroy]
 
   def index
-    @matrices = Matrix.all
+    @public_matrices = Matrix.where(shared: true)
+    @my_matrices = user_signed_in? ? current_user.matrices : []
   end
 
   def show
@@ -51,13 +52,14 @@ class MatricesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_matrix
-      @matrix = Matrix.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def matrix_params
-      params.require(:matrix).permit(:name, :value, :cost)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_matrix
+    @matrix = Matrix.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def matrix_params
+    params.require(:matrix).permit(:name, :value, :cost, :shared).merge(user: current_user)
+  end
 end
