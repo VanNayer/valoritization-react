@@ -23,7 +23,7 @@
             <%= link_to "#{fa_icon('user')}&nbsp;My account".html_safe, edit_user_registration_path, class: 'btn btn-primary navbar-btn'  %>
             <%= link_to "#{fa_icon('user-times')}&nbsp;Log out".html_safe, destroy_user_session_path, :method=>'delete', class: 'btn btn-primary navbar-btn'  %>
           <% else %>
-            <%= link_to "#{fa_icon('user-plus')}&nbsp;Sign in".html_safe, new_user_session_path, class: 'btn btn-primary navbar-btn'  %>
+            <%= link_to "#{fa_icon('user-plus')}&nbsp;Log in".html_safe, new_user_session_path, class: 'btn btn-primary navbar-btn'  %>
           <% end %>
         </div>
       </div>
