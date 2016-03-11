@@ -24,13 +24,13 @@
 </fieldset>
 <fieldset class="form-group">
   <%= f.label :shared, 'Sharing options' %>
-  <div>
-      <%= f.radio_button :shared, 'true', :checked => true %>
-      <%= f.label :shared_true, 'I want to share this matrix to the world.' %>
+  <div >
+    <%= f.radio_button :shared, 'true', :checked => true %>
+    <%= f.label :shared_true, 'I want to share this matrix to the world.' %>
   </div>
-  <div class="radio <%= 'disabled' if !user_signed_in? %>">
-    <%= f.radio_button :shared, 'false', checked: false, disabled: !user_signed_in?  %>
-    <%= f.label :shared_false, 'Only people with the link can see and use the matrix.' %>
+  <div>
+    <%= f.radio_button :shared, 'false', checked: false, disabled: !user_signed_in? %>
+    <%= f.label :shared_false, 'Only people with the link can see and use the matrix.', class: 'text-muted' if !user_signed_in?%>
   </div>
 </fieldset>
 

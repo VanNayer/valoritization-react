@@ -1,14 +1,16 @@
-defaults: &defaults
+default: &default
   adapter: postgresql
+  encoding: unicode
   pool: 5
-  connections: 5
-  host: localhost
-  username: <%= ENV['USER'] %>
 
 development:
   <<: *defaults
   database: valoritization-development
+  username: <%= ENV['USER'] %>
+  host: localhost
 
 test:
   <<: *defaults
   database: valoritization-test
+  username: <%= ENV['USER'] %>
+  host: localhost
