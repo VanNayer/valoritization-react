@@ -22,7 +22,8 @@ Session.vim
 spec/units/node_modules/
 coverage
 
-public/*
+public/0.*.hot-update.js
+public/*.hot-update.json
 node_modules/
 npm-debug.log
 tmp
