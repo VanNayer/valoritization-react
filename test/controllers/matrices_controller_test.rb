@@ -2,13 +2,13 @@ require 'test_helper'
 
 class MatricesControllerTest < ActionController::TestCase
   setup do
-    @matrix = create :matrix
+    @matrix = create :matrix, shared: true
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:matrices)
+    assert_not_nil assigns(:public_matrices)
   end
 
   test "should get new" do
