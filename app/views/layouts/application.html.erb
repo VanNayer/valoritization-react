@@ -28,9 +28,7 @@
         </div>
       </div>
     </nav>
-    <% if notice %>
-      <p id="notice"><%= notice %></p>
-    <% end %>
+    <%= flash_messages %>
 
     <div class="row mtm mlxl mrxl">
       <%= yield %>

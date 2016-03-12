@@ -24,16 +24,17 @@ let dispatchEdit = (dispatch, task, field, input) => {
 }
 
 let EditTaskField = ({task, field, validationFn, dispatch}) => {
-  console.log(task, field, task[field])
+  if(matrix_infos.read_only) {
+    return (<p> {task[field].toString()}</p>)
+  }
   return (
         <InlineEdit
           validate={validationFn}
           activeClassName="editing form-control"
-          text={task[field].toString()}
+          text={ task[field] ? task[field].toString() : 'None'}
           paramName="enteredValue"
           change={(input) => dispatchEdit(dispatch, task, field, input)}
           style={{display: 'inline-block'}}
-
           />
   )
 }

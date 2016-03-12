@@ -1,5 +1,6 @@
 class MatricesController < ApplicationController
   before_action :set_matrix, only: [:show, :edit, :update, :destroy]
+  before_action :require_authorization, :only => [:edit, :update, :destroy]
 
   def index
     @public_matrices = Matrix.where(shared: true)
@@ -62,4 +63,12 @@ class MatricesController < ApplicationController
   def matrix_params
     params.require(:matrix).permit(:name, :value, :cost, :shared).merge(user: current_user)
   end
+
+  def require_authorization
+    if @matrix.user != current_user
+      flash[:error] = "Only matrix owner can perform this action!"
+      redirect_to matrices_path
+    end
+  end
+
 end

@@ -4,6 +4,17 @@ import EditTaskField from './edit_task_field.jsx'
 import AddTask from '../containers/add_task.jsx'
 import {callDeleteTask} from '../actions/actions.jsx'
 
+let addTaskSection = !matrix_infos.read_only ? <AddTask/> : ''
+
+let actionsSection = !matrix_infos.read_only ? (
+  <button onClick={() => {
+    onTaskClick(task.id);
+  }} className='btn btn-default form-control'>
+    Delete Task
+  </button>
+): (<em>You need to be owner.</em>)
+
+
 let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
   return (
     <table className='table table-striped'>
@@ -17,20 +28,13 @@ let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
         </tr>
       </thead>
       <tbody>
-        <AddTask />
+        {addTaskSection}
         {tasks.map(task => <tr key={task.id}>
           <td><EditTaskField task={task} field='title' validationFn={(inputText) => (inputText.length > 0 && inputText.length < 64)}/></td>
           <td><EditTaskField task={task} field='value' validationFn={(inputValue) => Number.isInteger(parseInt(inputValue))}/></td>
           <td><EditTaskField task={task} field='cost' validationFn={(inputCost) => Number.isInteger(parseInt(inputCost))}/></td>
           <td><EditTaskField task={task} field='description'/></td>
-          <td>
-            <button onClick={() => {
-              onTaskClick(task.id);
-            }}
-            className='btn btn-default form-control'>
-              Delete Task
-            </button>
-          </td>
+          <td>{actionsSection}</td>
         </tr>)}
       </tbody>
     </table>

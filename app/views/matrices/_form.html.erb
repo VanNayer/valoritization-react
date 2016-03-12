@@ -26,11 +26,12 @@
   <%= f.label :shared, 'Sharing options' %>
   <div >
     <%= f.radio_button :shared, 'true', :checked => true %>
-    <%= f.label :shared_true, 'I want to share this matrix to the world.' %>
+    <%= f.label :shared_true, 'Everybody can see it; only you can modify it.' %>
   </div>
   <div>
     <%= f.radio_button :shared, 'false', checked: false, disabled: !user_signed_in? %>
-    <%= f.label :shared_false, 'Only people with the link can see and use the matrix.', class: 'text-muted' if !user_signed_in?%>
+    <%= f.label :shared_false, "People with the link can see it; only you can modify it.", class: !user_signed_in? ? 'text-muted' : '' %>
+    <%= link_to(:sign_up, 'To do that you can create an account.') unless user_signed_in?%>
   </div>
 </fieldset>
 

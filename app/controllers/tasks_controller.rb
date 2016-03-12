@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:update, :toggle, :destroy]
+  before_action :require_authorization, :only => [:edit, :update, :destroy]
 
   # POST /tasks
   def create
@@ -44,5 +45,11 @@ class TasksController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
     params.permit(:title, :value, :cost, :description, :matrix_id)
+  end
+
+  def require_authorization
+    if @task.matrix.user != current_user
+      render json: @task.errors, status: :unauthorized
+    end
   end
 end

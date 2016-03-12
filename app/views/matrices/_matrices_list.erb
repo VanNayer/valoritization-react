@@ -1,6 +1,8 @@
 <table class='table'>
   <thead>
-    <caption><h3><%=title%></h3></caption>
+    <caption>
+      <h3><%=title%></h3>
+    </caption>
     <tr>
       <th>Name</th>
       <th>Value</th>
@@ -18,8 +20,8 @@
       <td><%= matrix.cost %></td>
       <td><%= matrix.shared %></td>
       <td><%= link_to 'Show', matrix %></td>
-      <td><%= link_to 'Edit', edit_matrix_path(matrix) %></td>
-      <td><%= link_to 'Destroy', matrix, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to('Edit', edit_matrix_path(matrix)) unless matrix.user != current_user %></td>
+      <td><%= link_to('Destroy', matrix, method: :delete, data: { confirm: 'Are you sure?' })  unless matrix.user != current_user %></td>
     </tr>
     <% end %>
   <% else %>

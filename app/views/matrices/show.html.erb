@@ -1,11 +1,7 @@
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
-
 <div class="valoritization" id="root">
   <%= javascript_tag do %>
     var retrieved_tasks = <%=@tasks.to_json.html_safe %>
-    var matrix_infos = <%=@matrix.to_json.html_safe %>
+    var matrix_infos = <%=@matrix.attributes.merge(read_only: current_user&.id != @matrix.user_id).to_json.html_safe %>
   <% end %>
 </div>
 <script src="/bundle.js"></script>
