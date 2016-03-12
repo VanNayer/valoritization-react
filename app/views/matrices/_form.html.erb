@@ -31,7 +31,7 @@
   <div>
     <%= f.radio_button :shared, 'false', checked: false, disabled: !user_signed_in? %>
     <%= f.label :shared_false, "People with the link can see it; only you can modify it.", class: !user_signed_in? ? 'text-muted' : '' %>
-    <%= link_to(:sign_up, 'To do that you can create an account.') unless user_signed_in?%>
+    <%= link_to('(Need an account)', :new_user_registration) unless user_signed_in?%>
   </div>
 </fieldset>
 
