@@ -9,19 +9,19 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top mbn">
       <div class="container-fluid row" style="background-color: black;">
-        <div class='col-md-3 hidden-xs hidden-sm hidden-md'>
+        <div class='col-md-4 hidden-xs hidden-sm'>
           <p class="h3" style="height:100%; color: white;">Valoritization.com</span>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-4 col-xs-7'>
           <%= link_to fa_icon('home'), root_path, title: 'Home', class: 'btn btn-primary navbar-btn'  %>
           <%= link_to fa_icon('file-o'), new_matrix_path, title: 'Create a new matrix', class: 'btn btn-primary navbar-btn'  %>
           <%= link_to fa_icon('list-alt'), matrices_path, title: 'List matrices', class: 'btn btn-primary navbar-btn'  %>
           <%= link_to fa_icon('envelope'), about_path, title: 'About', class: 'btn btn-primary navbar-btn' %>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-4 col-xs-5'>
           <% if user_signed_in? %>
-            <%= link_to "#{fa_icon('user')}&nbsp;My account".html_safe, edit_user_registration_path, class: 'btn btn-primary navbar-btn'  %>
-            <%= link_to "#{fa_icon('user-times')}&nbsp;Log out".html_safe, destroy_user_session_path, :method=>'delete', class: 'btn btn-primary navbar-btn'  %>
+            <%= link_to "#{fa_icon('user')}<span class='hidden-xs hidden-sm'>&nbsp;My account</span>".html_safe, edit_user_registration_path, class: 'btn btn-primary navbar-btn'  %>
+            <%= link_to "#{fa_icon('user-times')}<span class='hidden-xs hidden-sm'>&nbsp;Log out</span>".html_safe, destroy_user_session_path, :method=>'delete', class: 'btn btn-primary navbar-btn'  %>
           <% else %>
             <%= link_to "#{fa_icon('user-plus')}&nbsp;Log in".html_safe, new_user_session_path, class: 'btn btn-primary navbar-btn'  %>
           <% end %>

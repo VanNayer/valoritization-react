@@ -66,7 +66,7 @@ class MatricesController < ApplicationController
 
   def require_authorization
     if @matrix.user != current_user
-      flash[:error] = "Only matrix owner can perform this action!"
+      flash[:error] = "Only the matrix owner can perform this action!"
       redirect_to matrices_path
     end
   end
