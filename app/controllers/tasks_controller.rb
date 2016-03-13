@@ -48,6 +48,8 @@ class TasksController < ApplicationController
   end
 
   def require_authorization
+    puts "coucou #{@task.matrix.user}"
+    puts "current #{current_user}"
     if @task.matrix.user != current_user
       render json: @task.errors, status: :unauthorized
     end

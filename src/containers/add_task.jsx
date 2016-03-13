@@ -25,7 +25,7 @@ let AddTask = ({dispatch}) => {
         }}
         className='btn btn-primary  form-control'
         >
-          Add Task
+          Add<span className='hidden-xs hidden-sm'> Task</span>
         </button>
       </td>
     </tr>

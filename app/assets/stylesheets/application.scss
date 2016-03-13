@@ -12,20 +12,36 @@
  *
  *= require font-awesome
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-  padding-top: 57px;
-  padding-bottom: 70px;
-  text-align: justify;
-}
+$small: 768px;
+$medium: 992px;
+$large: 1200px;
 
+body {
+  text-align: justify;
+  padding-top: 57px;
+}
+@media (max-width: $medium) {
+  body, h1, h2, h3, h4, .btn {
+    font-size: 40px;
+  }
+  body {
+      padding-top: 80px;
+  }
+  .btn {
+    padding: 20px 20px;
+    line-height: 0;
+  }
+}
 
 @mixin margin-left($value){ margin-left: $value }
 @mixin margin-right($value){ margin-right: $value }
 @mixin padding-left($value){ padding-left: $value }
 @mixin padding-right($value){ padding-right: $value }
+
 
 // Spacing
 $spacingXs:         5px !default;

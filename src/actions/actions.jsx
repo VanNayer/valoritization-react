@@ -30,6 +30,7 @@ export const callAddTask = (title, value, cost, description) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
+      credentials: 'same-origin',
       body: JSON.stringify( {title, value, cost, description} )
     })).then(response => {
       return response.json();
@@ -48,6 +49,7 @@ export const callUpdateTask = (id, title, value, cost, description) => {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'same-origin',
       body: JSON.stringify( {title, value, cost, description} )
     })).then(() => {
       dispatch(updateTask(id, title, value, cost, description))
@@ -72,7 +74,8 @@ export const callToggleTask = (id) => {
 export const callDeleteTask = (id) => {
   return dispatch => {
     return fetch(new Request('tasks/'+ id, {
-      method: 'DELETE'
+      method: 'DELETE',
+      credentials: 'same-origin'
     })).then(() => {
       dispatch(deleteTask(id))
     }).catch((err) => {
