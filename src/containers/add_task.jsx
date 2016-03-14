@@ -23,6 +23,7 @@ let AddTask = ({dispatch}) => {
           cost.value = '';
           description.value = '';
         }}
+        style={{cursor: 'pointer'}}
         className='btn btn-primary form-control'
         >
           Add<span className='hidden-xs hidden-sm'> Task</span>

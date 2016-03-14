@@ -11775,6 +11775,7 @@
 	            cost.value = '';
 	            description.value = '';
 	          },
+	          style: { cursor: 'pointer' },
 	          className: 'btn btn-primary form-control'
 	        },
 	        'Add',
@@ -12010,10 +12011,12 @@
 	            null,
 	            !matrix_infos.read_only ? _react2.default.createElement(
 	              'a',
-	              { style: 'cursor: pointer;',
-	                onClick: function onClick() {
+	              { onClick: function onClick() {
 	                  onTaskClick(task.id);
-	                }, className: 'btn btn-default form-control' },
+	                },
+	                className: 'btn btn-default form-control',
+	                style: { cursor: 'pointer' }
+	              },
 	              'Delete',
 	              _react2.default.createElement(
 	                'span',
