@@ -37,7 +37,7 @@ export const callAddTask = (title, value, cost, description) => {
     }).then(function(json) {
       dispatch(addTask(json.id, title, value, cost, description))
     }).catch((err) => {
-      console.log('err')
+      console.log('err:', err)
     })
   }
 }
