@@ -16,17 +16,17 @@ let AddTask = ({dispatch}) => {
       <td><input ref={node => {cost = node}} className='form-control'/></td>
       <td><input ref={node => {description = node}} className='form-control'/></td>
       <td>
-        <button onClick={() => {
+        <a href="#" onClick={() => {
           dispatch(callAddTask(title.value, parseInt(value.value), parseInt(cost.value), description.value));
           title.value = '';
           value.value = '';
           cost.value = '';
           description.value = '';
         }}
-        className='btn btn-primary  form-control'
+        className='btn btn-primary form-control'
         >
           Add<span className='hidden-xs hidden-sm'> Task</span>
-        </button>
+        </a>
       </td>
     </tr>
   )

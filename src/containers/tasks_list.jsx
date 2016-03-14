@@ -26,11 +26,12 @@ let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
           <td><EditTaskField task={task} field='cost' validationFn={(inputCost) => Number.isInteger(parseInt(inputCost))}/></td>
           <td><EditTaskField task={task} field='description'/></td>
           <td>{!matrix_infos.read_only ? (
-            <button onClick={() => {
+            <a style='cursor: pointer;' 
+              onClick={() => {
               onTaskClick(task.id);
             }} className='btn btn-default form-control'>
               Delete<span className='hidden-xs hidden-sm'> Task</span>
-            </button>
+            </a>
           ): (<em>You need to be owner.</em>)}</td>
         </tr>)}
       </tbody>

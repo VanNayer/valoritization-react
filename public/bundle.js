@@ -11767,15 +11767,15 @@
 	      'td',
 	      null,
 	      _react2.default.createElement(
-	        'button',
-	        { onClick: function onClick() {
+	        'a',
+	        { href: '#', onClick: function onClick() {
 	            dispatch((0, _actions.callAddTask)(title.value, parseInt(value.value), parseInt(cost.value), description.value));
 	            title.value = '';
 	            value.value = '';
 	            cost.value = '';
 	            description.value = '';
 	          },
-	          className: 'btn btn-primary  form-control'
+	          className: 'btn btn-primary form-control'
 	        },
 	        'Add',
 	        _react2.default.createElement(
@@ -12009,8 +12009,9 @@
 	            'td',
 	            null,
 	            !matrix_infos.read_only ? _react2.default.createElement(
-	              'button',
-	              { onClick: function onClick() {
+	              'a',
+	              { style: 'cursor: pointer;',
+	                onClick: function onClick() {
 	                  onTaskClick(task.id);
 	                }, className: 'btn btn-default form-control' },
 	              'Delete',
