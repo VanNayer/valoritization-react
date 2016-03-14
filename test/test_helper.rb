@@ -6,3 +6,7 @@ class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
   include Devise::TestHelpers
 end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
