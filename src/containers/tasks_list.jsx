@@ -29,7 +29,7 @@ let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
             <a onClick={() => {onTaskClick(task.id);}}
               className='btn btn-default form-control'
               style={{cursor: 'pointer'}}
-              >
+            >
               Delete<span className='hidden-xs hidden-sm'> Task</span>
             </a>
           ): (<em>You need to be owner.</em>)}</td>
