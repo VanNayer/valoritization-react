@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware } from 'redux';
@@ -13,12 +12,11 @@ import {addTask} from './src/actions/actions.jsx'
 
 let store = createStore(
   valoritizationApp, //
-  {}, // load matrix from server answer
+  {}, // load matrix from server answer.
   applyMiddleware(
     thunkMiddleware, // lets us dispatch() functions
     loggerMiddleware() // middleware that logs actions
 ))
-
 
 retrieved_tasks.forEach((task) => {
   store.dispatch(addTask(task.id, task.title, task.value, task.cost, task.description, task.completed))

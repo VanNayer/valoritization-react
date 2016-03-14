@@ -4,7 +4,7 @@ import EditTaskField from './edit_task_field.jsx'
 import AddTask from '../containers/add_task.jsx'
 import {callDeleteTask} from '../actions/actions.jsx'
 
-let addTaskSection = !matrix_infos.read_only ? <AddTask/> : ''
+  let addTaskSection = !matrix_infos.read_only ? <AddTask/> : false
 
 let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
   return (
