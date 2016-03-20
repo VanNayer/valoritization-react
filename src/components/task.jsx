@@ -37,7 +37,7 @@ const Task = connect()(({
   <article className="matrix__tasks__task" onClick={() => dispatch(callToggleTask(id))}
     style={
       Object.assign({
-          textDecoration: completed? 'line-through': 'none',
+          textDecoration: completed ? 'line-through': 'none',
           left: computeXPosition(cost, extremeCoordinates) + '%',
           bottom: computeYPosition(value, extremeCoordinates) + '%'
         }, taskStyle)}>

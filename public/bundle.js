@@ -11681,28 +11681,28 @@
 	      null,
 	      _react2.default.createElement('input', { ref: function ref(node) {
 	          title = node;
-	        }, className: 'form-control' })
+	        }, className: 'form-control', type: 'text' })
 	    ),
 	    _react2.default.createElement(
 	      'td',
 	      null,
 	      _react2.default.createElement('input', { ref: function ref(node) {
 	          value = node;
-	        }, className: 'form-control' })
+	        }, className: 'form-control', type: 'number' })
 	    ),
 	    _react2.default.createElement(
 	      'td',
 	      null,
 	      _react2.default.createElement('input', { ref: function ref(node) {
 	          cost = node;
-	        }, className: 'form-control' })
+	        }, className: 'form-control', type: 'number' })
 	    ),
 	    _react2.default.createElement(
 	      'td',
 	      null,
 	      _react2.default.createElement('input', { ref: function ref(node) {
 	          description = node;
-	        }, className: 'form-control' })
+	        }, className: 'form-control', type: 'text' })
 	    ),
 	    _react2.default.createElement(
 	      'td',
@@ -11716,7 +11716,6 @@
 	            cost.value = '';
 	            description.value = '';
 	          },
-	          style: { cursor: 'pointer' },
 	          className: 'btn btn-primary form-control'
 	        },
 	        'Add',
@@ -11797,8 +11796,7 @@
 	    paramName: 'enteredValue',
 	    change: function change(input) {
 	      return dispatchEdit(dispatch, task, field, input);
-	    },
-	    style: { display: 'inline-block' }
+	    }
 	  });
 	};
 
@@ -11920,7 +11918,7 @@
 	      tasks.map(function (task) {
 	        return _react2.default.createElement(
 	          'tr',
-	          { key: task.id },
+	          { key: task.id, style: Object.assign({ textDecoration: task.completed ? 'line-through' : 'none' }) },
 	          _react2.default.createElement(
 	            'td',
 	            null,

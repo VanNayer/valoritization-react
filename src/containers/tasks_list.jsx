@@ -20,7 +20,7 @@ let TasksList = ({tasks, onNewTextValidated, onTaskClick}) => {
       </thead>
       <tbody>
         {addTaskSection}
-        {tasks.map(task => <tr key={task.id}>
+        {tasks.map(task => <tr key={task.id} style={Object.assign({textDecoration: task.completed ? 'line-through': 'none'})}>
           <td><EditTaskField task={task} field='title' validationFn={(inputText) => (inputText.length > 0 && inputText.length < 64)}/></td>
           <td><EditTaskField task={task} field='value' validationFn={(inputValue) => Number.isInteger(parseInt(inputValue))}/></td>
           <td><EditTaskField task={task} field='cost' validationFn={(inputCost) => Number.isInteger(parseInt(inputCost))}/></td>

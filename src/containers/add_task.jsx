@@ -11,10 +11,10 @@ let AddTask = ({dispatch}) => {
 
   return (
     <tr>
-      <td><input ref={node => {title = node}} className='form-control'/></td>
-      <td><input ref={node => {value = node}} className='form-control'/></td>
-      <td><input ref={node => {cost = node}} className='form-control'/></td>
-      <td><input ref={node => {description = node}} className='form-control'/></td>
+      <td><input ref={node => {title = node}} className='form-control' type='text'/></td>
+      <td><input ref={node => {value = node}} className='form-control' type='number'/></td>
+      <td><input ref={node => {cost = node}} className='form-control' type='number'/></td>
+      <td><input ref={node => {description = node}} className='form-control' type='text'/></td>
       <td>
         <a href="#" onClick={() => {
           dispatch(callAddTask(title.value, parseInt(value.value), parseInt(cost.value), description.value));
@@ -23,7 +23,6 @@ let AddTask = ({dispatch}) => {
           cost.value = '';
           description.value = '';
         }}
-        style={{cursor: 'pointer'}}
         className='btn btn-primary form-control'
         >
           Add<span className='hidden-xs hidden-sm'> Task</span>

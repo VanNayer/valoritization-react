@@ -34,7 +34,6 @@ let EditTaskField = ({task, field, validationFn, dispatch}) => {
           text={ task[field] ? task[field].toString() : 'None'}
           paramName="enteredValue"
           change={(input) => dispatchEdit(dispatch, task, field, input)}
-          style={{display: 'inline-block'}}
           />
   )
 }
