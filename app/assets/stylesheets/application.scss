@@ -25,7 +25,7 @@ body {
   padding-top: 57px;
 }
 @media (max-width: $medium) {
-  body, input[type="text"], h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5, .btn {
+  body, input[type="text"], input[type="number"], h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5, .btn {
     font-size: 30px;
   }
   body {
@@ -35,20 +35,20 @@ body {
     padding: 20px 20px;
     line-height: 0;
   }
-  input[type="text"] {
+  input[type="text"], input[type="number"] {
     height: 70px;
   }
 }
 
 @media (max-width: $small) {
-  body, input[type="text"], h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5, .btn {
+  body, input[type="text"], input[type="number"], h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5, .btn {
     font-size: 20px;
   }
   .btn {
     padding: 11px 11px;
     line-height: 0;
   }
-  input[type="text"] {
+  input[type="text"], input[type="number"] {
     height: 50px;
   }
 }
