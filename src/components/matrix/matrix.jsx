@@ -16,24 +16,25 @@ var matrixHeight = {
   height: '300px'
 };
 
-const Matrix = ({tasks, onTaskClick, extremeCoordinates}) => (
+const Matrix = ({tasks, extremeCoordinates}) => (
   <div style={matrixHeight} className='maxl' >
     <Cost maxCost={extremeCoordinates.maxCost}/>
     <Value maxValue={extremeCoordinates.maxValue}/>
     <img style={Object.assign(imgStyle, matrixHeight)} src="/matrix-background.png" />
     {tasks.map(task =>
-      <Task
-        key={task.id}
-        {...{...task, extremeCoordinates}}
-        onClick={() => onTaskClick(task.id) }
-      />)
+      <Task key={task.id} {...{...task, extremeCoordinates}} />)
     }
   </div>
 )
 
 Matrix.propTypes = {
-  tasks: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.string.isRequired, completed: PropTypes.bool.isRequired, title: PropTypes.string.isRequired, value: PropTypes.number.isRequired, cost: PropTypes.number.isRequired}).isRequired).isRequired,
-  onTaskClick: PropTypes.func.isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired,
+      title: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+      cost: PropTypes.number.isRequired}
+    ).isRequired).isRequired,
   extremeCoordinates: React.PropTypes.shape({maxCost: PropTypes.number.isRequired, maxValue: PropTypes.number.isRequired, minCost: PropTypes.number.isRequired, minValue: PropTypes.number.isRequired})
 }
 

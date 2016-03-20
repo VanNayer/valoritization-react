@@ -1,4 +1,6 @@
 import React, {PropTypes} from 'react'
+import { connect } from 'react-redux'
+import { callToggleTask } from '../actions/actions.jsx'
 
 var taskStyle = {
   color: 'white',
@@ -23,15 +25,17 @@ const computeYPosition = (taskValue, extreme) => {
   return Math.round(((relativeValue) * 100) / (relativeValueDelta))
 }
 
-const Task = ({
-  onClick,
+const Task = connect()(({
+  id,
   completed,
   title,
   value,
   cost,
-  extremeCoordinates
+  extremeCoordinates,
+  dispatch
 }) => (
-  <article className="matrix__tasks__task" onClick={onClick} style={
+  <article className="matrix__tasks__task" onClick={() => dispatch(callToggleTask(id))}
+    style={
       Object.assign({
           textDecoration: completed? 'line-through': 'none',
           left: computeXPosition(cost, extremeCoordinates) + '%',
@@ -39,15 +43,16 @@ const Task = ({
         }, taskStyle)}>
     {title}
   </article>
-)
+))
 
 Task.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   cost: PropTypes.number.isRequired,
   extremeCoordinates: React.PropTypes.shape({maxCost: PropTypes.number.isRequired, maxValue: PropTypes.number.isRequired, minCost: PropTypes.number.isRequired, minValue: PropTypes.number.isRequired})
 }
+
 
 export default Task
