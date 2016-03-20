@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch';
+
 export const requestAddTask = (title, value, cost, description) => {
   return {type: 'REQUEST_ADD_TASK', title, value, cost, description}
 }
