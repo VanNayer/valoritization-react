@@ -11,7 +11,8 @@ var taskStyle = {
   paddingRight: '10px',
   textAlign: 'center',
   opacity: '.8',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
+  cursor: 'pointer'
 }
 
 const computeXPosition = (taskCost, extreme) => {

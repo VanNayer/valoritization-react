@@ -23,6 +23,11 @@ export const deleteTask = (id) => {
   return {type: 'DELETE_TASK', id}
 }
 
+export const changeListOrder = (sortFunction) => {
+  return {type: 'CHANGE_LIST_ORDER', sortFunction}
+}
+
+
 export const callAddTask = (title, value, cost, description) => {
   return dispatch => {
     dispatch(requestAddTask(title, value, cost, description));
