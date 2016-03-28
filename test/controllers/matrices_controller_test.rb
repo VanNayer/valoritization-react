@@ -31,7 +31,7 @@ class MatricesControllerTest < ActionController::TestCase
     sign_in user
 
     post :create, matrix: { cost: @matrix.cost, name: @matrix.name, value: @matrix.value }
-    assert_equal user, Matrix.all.first.user
+    assert_equal user, Matrix.all.last.user
     assert_redirected_to matrix_path(assigns(:matrix))
   end
 

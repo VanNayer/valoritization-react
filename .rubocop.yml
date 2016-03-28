@@ -1,0 +1,77 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/**/*
+  TargetRubyVersion: 2.3
+Rails:
+  Enabled: true
+
+# Unstable cop
+Style/MutableConstant:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Rails/ActionFilter:
+  Enabled: true
+Rails/Date:
+  Enabled: true
+Rails/FindBy:
+  Enabled: true
+Rails/FindEach:
+  Enabled: true
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/Output:
+  Enabled: true
+Rails/ReadWriteAttribute:
+  Enabled: true
+Rails/ScopeArgs:
+  Enabled: true
+Rails/TimeZone:
+  Enabled: true
+
+# 80 lines is too short
+Metrics/LineLength:
+  Max: 120
+
+# Disable standard metrics
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+
+# No real advantage of doing it
+Style/StringLiterals:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+# No style is currently enforced.
+Style/MethodDefParentheses:
+  Enabled: false
+
+# No doc currently
+Style/Documentation:
+  Enabled: false
+
+# fail and raise are the same
+Style/SignalException:
+  Enabled: false
+
+# Use kwargs
+Style/OptionHash:
+  Enabled: true
+
+# Use %i
+Style/SymbolArray:
+  Enabled: true
