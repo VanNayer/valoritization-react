@@ -11532,6 +11532,19 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var computeExtremeCoordinates = function computeExtremeCoordinates(tasks) {
+	  var extremes = { minCost: 0, minValue: 0, maxCost: 10, maxValue: 10 };
+	  tasks.forEach(function (task) {
+	    return extremes = {
+	      minCost: Math.min(extremes.minCost, task.cost),
+	      minValue: Math.min(extremes.minValue, task.value),
+	      maxCost: Math.max(extremes.maxCost, task.cost),
+	      maxValue: Math.max(extremes.maxValue, task.value)
+	    };
+	  });
+	  return extremes;
+	};
+
 	var imgStyle = {
 	  position: 'absolute',
 	  left: '0',
@@ -11547,7 +11560,8 @@
 
 	var Matrix = function Matrix(_ref) {
 	  var tasks = _ref.tasks;
-	  var extremeCoordinates = _ref.extremeCoordinates;
+
+	  var extremeCoordinates = computeExtremeCoordinates(tasks);
 	  return _react2.default.createElement(
 	    'div',
 	    { style: matrixHeight, className: 'maxl' },
@@ -11566,8 +11580,7 @@
 	    completed: _react.PropTypes.bool.isRequired,
 	    title: _react.PropTypes.string.isRequired,
 	    value: _react.PropTypes.number.isRequired,
-	    cost: _react.PropTypes.number.isRequired }).isRequired).isRequired,
-	  extremeCoordinates: _react2.default.PropTypes.shape({ maxCost: _react.PropTypes.number.isRequired, maxValue: _react.PropTypes.number.isRequired, minCost: _react.PropTypes.number.isRequired, minValue: _react.PropTypes.number.isRequired })
+	    cost: _react.PropTypes.number.isRequired }).isRequired).isRequired
 	};
 
 	exports.default = Matrix;
@@ -11990,7 +12003,7 @@
 	            !matrix_infos.read_only ? _react2.default.createElement(
 	              'a',
 	              { onClick: function onClick() {
-	                  dispatch((0, _actions.callDeleteTask)(id));
+	                  dispatch((0, _actions.callDeleteTask)(task.id));
 	                },
 	                className: 'btn btn-default form-control',
 	                style: { cursor: 'pointer' }
@@ -12129,7 +12142,6 @@
 	var valoritizationApp = (0, _redux.combineReducers)({
 	  tasks: _tasks2.default,
 	  visibilityFilter: _visibility_filter2.default,
-	  extremeCoordinates: _extreme_coordinates2.default,
 	  tasklistDisplay: _task_list_display2.default
 	});
 

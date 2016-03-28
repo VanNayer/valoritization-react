@@ -40,7 +40,7 @@ let TasksList = ({tasks, task_list_display, onNewTextValidated, onTaskClick, act
           <td><EditTaskField task={task} field='cost' validationFn={(inputCost) => Number.isInteger(parseInt(inputCost))}/></td>
           <td><EditTaskField task={task} field='description'/></td>
           <td>{!matrix_infos.read_only ? (
-            <a onClick={() => {dispatch(callDeleteTask(id))}}
+            <a onClick={() => {dispatch(callDeleteTask(task.id))}}
               className='btn btn-default form-control'
               style={{cursor: 'pointer'}}
             >

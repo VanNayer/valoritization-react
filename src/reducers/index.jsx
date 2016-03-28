@@ -7,7 +7,6 @@ import tasklistDisplay from './task_list_display.jsx'
 const valoritizationApp = combineReducers({
   tasks,
   visibilityFilter,
-  extremeCoordinates,
   tasklistDisplay
 })
 

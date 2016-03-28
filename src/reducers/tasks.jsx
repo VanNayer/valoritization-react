@@ -29,10 +29,7 @@ const task = (state, action) => {
 const tasks = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TASK':
-      return [
-        ...state,
-        task(undefined, action)
-      ]
+      return [...state, task(undefined, action)]
     case 'TOGGLE_TASK':
     case 'UPDATE_TASK':
       return state.map(taskState => task(taskState, action))
