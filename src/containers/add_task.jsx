@@ -11,6 +11,7 @@ let AddTask = ({dispatch}) => {
 
   return (
     <tr>
+      <td/>
       <td><input ref={node => {title = node}} className='form-control' type='text'/></td>
       <td><input ref={node => {value = node}} className='form-control' type='number'/></td>
       <td><input ref={node => {cost = node}} className='form-control' type='number'/></td>

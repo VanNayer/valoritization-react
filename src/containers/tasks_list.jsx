@@ -13,16 +13,18 @@ let TasksList = ({tasks, task_list_display, onNewTextValidated, onTaskClick, act
     <table className='table table-striped'>
       <thead>
         <tr>
-          <SortingHeader attribute='title'/>
-          <SortingHeader attribute='value'/>
-          <SortingHeader attribute='cost'/>
-          <SortingHeader attribute='description'/>
+          <SortingHeader title='Ratio' fn={it => {return (it.value/it.cost)}}/>
+          <SortingHeader title='Title' fn={it => {return it.title}}/>
+          <SortingHeader title='Value' fn={it => {return it.value}}/>
+          <SortingHeader title='Cost' fn={it => {return it.cost}}/>
+          <SortingHeader title='Description' fn={it => {return it.description}}/>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         {addTaskSection}
         {tasks.sort(task_list_display.sortFunction).map(task => <tr key={task.id} style={Object.assign({textDecoration: task.completed ? 'line-through': 'none'})}>
+          <td>{(task.value / task.cost).toFixed(2)}</td>
           <td><EditTaskField task={task} field='title' validationFn={(inputText) => (inputText.length > 0 && inputText.length < 64)}/></td>
           <td><EditTaskField task={task} field='value' validationFn={(inputValue) => Number.isInteger(parseInt(inputValue))}/></td>
           <td><EditTaskField task={task} field='cost' validationFn={(inputCost) => Number.isInteger(parseInt(inputCost))}/></td>

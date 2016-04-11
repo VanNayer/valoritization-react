@@ -11694,6 +11694,7 @@
 	  return _react2.default.createElement(
 	    'tr',
 	    null,
+	    _react2.default.createElement('td', null),
 	    _react2.default.createElement(
 	      'td',
 	      null,
@@ -11878,25 +11879,25 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var sortBy = function sortBy(a, b, att) {
-	  if (a[att] < b[att]) return -1;else if (a[att] > b[att]) return 1;else return 0;
+	var sortBy = function sortBy(a, b, fn) {
+	  if (fn(a) < fn(b)) return -1;else if (fn(a) > fn(b)) return 1;else return 0;
 	};
 
 	var SortingHeader = function SortingHeader(_ref) {
-	  var attribute = _ref.attribute;
+	  var title = _ref.title;
+	  var fn = _ref.fn;
 	  var dispatch = _ref.dispatch;
 
 	  var sortAsc = function sortAsc(a, b) {
-	    return sortBy(a, b, attribute);
+	    return sortBy(a, b, fn);
 	  };
 	  var sortDesc = function sortDesc(a, b) {
-	    return sortBy(b, a, attribute);
+	    return sortBy(b, a, fn);
 	  };
-
 	  return _react2.default.createElement(
 	    'th',
 	    null,
-	    attribute,
+	    title,
 	    ' ',
 	    _react2.default.createElement(
 	      'a',
@@ -11916,7 +11917,8 @@
 	};
 
 	SortingHeader.propTypes = {
-	  attribute: _react.PropTypes.string.isRequired
+	  title: _react.PropTypes.string.isRequired,
+	  fn: _react.PropTypes.func.isRequired
 	};
 
 	SortingHeader = (0, _reactRedux.connect)()(SortingHeader);
@@ -11974,10 +11976,21 @@
 	      _react2.default.createElement(
 	        'tr',
 	        null,
-	        _react2.default.createElement(_sorting_header2.default, { attribute: 'title' }),
-	        _react2.default.createElement(_sorting_header2.default, { attribute: 'value' }),
-	        _react2.default.createElement(_sorting_header2.default, { attribute: 'cost' }),
-	        _react2.default.createElement(_sorting_header2.default, { attribute: 'description' }),
+	        _react2.default.createElement(_sorting_header2.default, { title: 'Ratio', fn: function fn(it) {
+	            return it.value / it.cost;
+	          } }),
+	        _react2.default.createElement(_sorting_header2.default, { title: 'Title', fn: function fn(it) {
+	            return it.title;
+	          } }),
+	        _react2.default.createElement(_sorting_header2.default, { title: 'Value', fn: function fn(it) {
+	            return it.value;
+	          } }),
+	        _react2.default.createElement(_sorting_header2.default, { title: 'Cost', fn: function fn(it) {
+	            return it.cost;
+	          } }),
+	        _react2.default.createElement(_sorting_header2.default, { title: 'Description', fn: function fn(it) {
+	            return it.description;
+	          } }),
 	        _react2.default.createElement(
 	          'th',
 	          null,
@@ -11993,6 +12006,11 @@
 	        return _react2.default.createElement(
 	          'tr',
 	          { key: task.id, style: Object.assign({ textDecoration: task.completed ? 'line-through' : 'none' }) },
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            (task.value / task.cost).toFixed(2)
+	          ),
 	          _react2.default.createElement(
 	            'td',
 	            null,
