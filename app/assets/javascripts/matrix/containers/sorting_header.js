@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import {connect} from 'react-redux'
-import {changeListOrder} from '../actions/actions.jsx'
+import {changeListOrder} from '../actions/actions.js'
 
 let sortBy = (a, b, fn) => {
   if (fn(a) < fn(b))

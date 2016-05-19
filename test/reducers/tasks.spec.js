@@ -1,6 +1,6 @@
 import expect from 'expect'
-import tasks from '../../src/reducers/tasks.jsx'
-import {addTask, updateTask, toggleTask, deleteTask} from '../../src/actions/actions.jsx'
+import tasks from '../../reducers/tasks.js'
+import {addTask, updateTask, toggleTask, deleteTask} from '../../actions/actions.js'
 
 describe('tasks reducer', () => {
   it('should handle initial state', () => {

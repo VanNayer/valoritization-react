@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import Matrix from '../components/matrix/matrix.jsx'
+import Matrix from '../components/matrix/matrix.js'
 
 const getVisibleTasks = (tasks, filter) => {
   switch (filter) {

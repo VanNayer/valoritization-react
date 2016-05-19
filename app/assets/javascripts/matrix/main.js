@@ -6,9 +6,9 @@ import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import loggerMiddleware from 'redux-logger';
 
-import App from './src/components/App.jsx'
-import valoritizationApp from './src/reducers/index.jsx'
-import {addTask} from './src/actions/actions.jsx'
+import App from './components/App.js'
+import valoritizationApp from './reducers/index.js'
+import {addTask} from './actions/actions.js'
 
 let store = createStore(
   valoritizationApp, //
@@ -22,7 +22,7 @@ retrieved_tasks.forEach((task) => {
   store.dispatch(addTask(task.id, task.title, task.value, task.cost, task.description, task.completed))
 })
 
-require('./src/stylesheets/main.scss');
+require('./stylesheets/main.scss');
 render(
   <Provider store={store}>
     <App />

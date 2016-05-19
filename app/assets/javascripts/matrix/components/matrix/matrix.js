@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
-import Task from '../task.jsx'
-import Cost from './legend/cost.jsx'
-import Value from './legend/value.jsx'
+import Task from '../task.js'
+import Cost from './legend/cost.js'
+import Value from './legend/value.js'
 
 const computeExtremeCoordinates = (tasks) => {
   let extremes = {minCost: 0, minValue: 0, maxCost: 10, maxValue: 10}

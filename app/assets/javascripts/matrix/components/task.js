@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import { connect } from 'react-redux'
-import { callToggleTask } from '../actions/actions.jsx'
+import { callToggleTask } from '../actions/actions.js'
 
 var taskStyle = {
   color: 'white',

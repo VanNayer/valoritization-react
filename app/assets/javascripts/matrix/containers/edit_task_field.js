@@ -1,8 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {callUpdateTask} from '../actions/actions.jsx'
+import {callUpdateTask} from '../actions/actions.js'
 import InlineEdit from 'react-edit-inline'
-
 
 let dispatchEdit = (dispatch, task, field, input) => {
   switch (field) {

@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import EditTaskField from './edit_task_field.jsx'
-import SortingHeader from './sorting_header.jsx'
-import AddTask from './add_task.jsx'
-import {callDeleteTask, callToggleTask} from '../actions/actions.jsx'
+import EditTaskField from './edit_task_field.js'
+import SortingHeader from './sorting_header.js'
+import AddTask from './add_task.js'
+import {callDeleteTask, callToggleTask} from '../actions/actions.js'
 
 let addTaskSection = !matrix_infos.read_only ? <AddTask/> : false
 

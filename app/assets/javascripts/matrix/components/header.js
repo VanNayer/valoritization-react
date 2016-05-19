@@ -1,5 +1,5 @@
 import React from 'react'
-import FilterLink from '../containers/filter_link.jsx'
+import FilterLink from '../containers/filter_link.js'
 
 const Header = () => (
 

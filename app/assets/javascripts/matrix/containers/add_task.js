@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {callAddTask} from '../actions/actions.jsx'
+import {callAddTask} from '../actions/actions.js'
 
 let AddTask = ({dispatch}) => {
 
