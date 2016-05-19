@@ -2,13 +2,10 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-    entry: [
-        './app/assets/javascripts/matrix/main.js'
-    ],
+    entry: './app/assets/javascripts/matrix/main.js',
     output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'bundle.js',
-        publicPath: '/public/'
+      filename: 'matrix-dist.js',
+      path: './vendor/assets/javascripts',
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),

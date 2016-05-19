@@ -4,7 +4,7 @@
     var matrix_infos = <%=@matrix.attributes.merge(read_only: current_user&.id != @matrix.user_id).to_json.html_safe %>
   <% end %>
 </div>
-<script src="/bundle.js"></script>
+<%= javascript_include_tag 'bundle-matrix' %>
 
 <%= link_to('Edit', edit_matrix_path(@matrix), class: 'btn btn-default' ) unless current_user&.id != @matrix.user_id%>
 <%= link_to 'Back', matrices_path, class: 'btn btn-default' %>

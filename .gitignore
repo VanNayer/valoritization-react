@@ -7,6 +7,9 @@
 # Ignore pow config
 /.powenv
 
+# Ignore compiled assets
+public/assets/
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -22,8 +25,6 @@ Session.vim
 spec/units/node_modules/
 coverage
 
-public/0.*.hot-update.js
-public/*.hot-update.json
 node_modules/
 npm-debug.log
 tmp

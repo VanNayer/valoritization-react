@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class FullWorkflowTest < ActionDispatch::IntegrationTest
-  test 'visit fees section with multiple practices' do
+  test 'The full workflow' do
     visit root_path
     click_link 'Log in'
     fill_in 'Email', with: 'un.email@gmail.com'
