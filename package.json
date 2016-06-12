@@ -5,8 +5,10 @@
   "repository": "git@github.com:VanNayer/valoritization-react.git",
   "license": "MIT",
   "scripts": {
-    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./test/setup.js",
-    "test:watch": "npm test -- --watch"
+    "dev": "webpack --progress --colors --watch",
+    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./app/assets/javascripts/matrix/test/setup.js app/assets/javascripts/matrix/test",
+    "test:watch": "npm test -- --watch",
+    "lint": "eslint --quiet . && sass-lint"
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.5.0",

@@ -25,7 +25,7 @@ module.exports = {
 }
 
 process.env.BABEL_ENV = 'commonjs'
-    // Compile Redux from source
+
 module.exports.module.loaders.push({
     test: /\.js$/,
     loaders: ['babel'],
