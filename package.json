@@ -5,6 +5,7 @@
   "repository": "git@github.com:VanNayer/valoritization-react.git",
   "license": "MIT",
   "scripts": {
+    "build": "webpack --progress --colors",
     "dev": "webpack --progress --colors --watch",
     "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./app/assets/javascripts/matrix/test/setup.js app/assets/javascripts/matrix/test",
     "test:watch": "npm test -- --watch",
