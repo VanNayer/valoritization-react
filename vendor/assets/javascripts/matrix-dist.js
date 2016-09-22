@@ -12009,7 +12009,7 @@
 	        return Number.isInteger(parseInt(inputValue));
 	      } })), _react2.default.createElement('td', null, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'cost', validationFn: function validationFn(inputCost) {
 	        return Number.isInteger(parseInt(inputCost));
-	      } })), _react2.default.createElement('td', null, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'description' })), _react2.default.createElement('td', null, !matrix_infos.read_only ? _react2.default.createElement('span', null, _react2.default.createElement('a', { onClick: function onClick() {
+	      } })), _react2.default.createElement('td', { style: { width: '33%' } }, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'description' })), _react2.default.createElement('td', null, !matrix_infos.read_only ? _react2.default.createElement('span', null, _react2.default.createElement('a', { onClick: function onClick() {
 	        dispatch((0, _actions.callDeleteTask)(task.id));
 	      }, className: 'btn btn-default', style: btnStyle }, 'Delete', _react2.default.createElement('span', { className: 'hidden-xs hidden-sm' }, ' Task')), _react2.default.createElement('a', { onClick: function onClick() {
 	        dispatch((0, _actions.callToggleTask)(task.id));

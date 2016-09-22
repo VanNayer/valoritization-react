@@ -28,7 +28,7 @@ let TasksList = ({tasks, task_list_display, onNewTextValidated, onTaskClick, act
           <td><EditTaskField task={task} field='title' validationFn={(inputText) => (inputText.length > 0 && inputText.length < 64)}/></td>
           <td><EditTaskField task={task} field='value' validationFn={(inputValue) => Number.isInteger(parseInt(inputValue))}/></td>
           <td><EditTaskField task={task} field='cost' validationFn={(inputCost) => Number.isInteger(parseInt(inputCost))}/></td>
-          <td><EditTaskField task={task} field='description'/></td>
+          <td style={{width: '33%'}}><EditTaskField task={task} field='description'/></td>
           <td>{!matrix_infos.read_only ? (
             <span>
               <a onClick={() => {dispatch(callDeleteTask(task.id))}} className='btn btn-default' style={btnStyle}>
