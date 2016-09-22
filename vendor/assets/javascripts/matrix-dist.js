@@ -11566,7 +11566,7 @@
 
 	var Value = function Value(_ref) {
 	  var maxValue = _ref.maxValue;
-	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', top: '1%', textAlign: 'center', width: '100%' } }, maxValue), _react2.default.createElement('span', { style: { position: 'absolute', top: '50%' } }, matrix_infos.value));
+	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', top: '1%', textAlign: 'center', width: '100%' } }, maxValue), _react2.default.createElement('span', { style: { position: 'absolute', top: '50%', textAlign: 'center', width: '100%' } }, matrix_infos.value));
 	};
 
 	Value.propTypes = {
@@ -11720,9 +11720,9 @@
 	    },
 	    style: Object.assign({
 	      textDecoration: completed ? 'line-through' : 'none',
-	      left: computeXPosition(cost, extremeCoordinates) + '%',
+	      left: computeXPosition(cost, extremeCoordinates) * 0.95 + '%',
 	      bottom: computeYPosition(value, extremeCoordinates) + '%'
-	    }, taskStyle) }, title);
+	    }, taskStyle) }, title.slice(0, 20) + (title.length > 20 ? '...' : ''));
 	});
 
 	Task.propTypes = {
@@ -12003,13 +12003,13 @@
 	    } }), _react2.default.createElement(_sorting_header2.default, { title: 'Description', fn: function fn(it) {
 	      return it.description;
 	    } }), _react2.default.createElement('th', null, 'Actions'))), _react2.default.createElement('tbody', null, addTaskSection, tasks.sort(task_list_display.sortFunction).map(function (task) {
-	    return _react2.default.createElement('tr', { key: task.id, style: Object.assign({ textDecoration: task.completed ? 'line-through' : 'none' }) }, _react2.default.createElement('td', null, (task.value / task.cost).toFixed(2)), _react2.default.createElement('td', null, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'title', validationFn: function validationFn(inputText) {
+	    return _react2.default.createElement('tr', { key: task.id, style: Object.assign({ textDecoration: task.completed ? 'line-through' : 'none' }) }, _react2.default.createElement('td', { style: { width: '7%' } }, (task.value / task.cost).toFixed(2)), _react2.default.createElement('td', { style: { width: '25%' } }, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'title', validationFn: function validationFn(inputText) {
 	        return inputText.length > 0 && inputText.length < 64;
-	      } })), _react2.default.createElement('td', null, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'value', validationFn: function validationFn(inputValue) {
+	      } })), _react2.default.createElement('td', { style: { width: '11%' } }, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'value', validationFn: function validationFn(inputValue) {
 	        return Number.isInteger(parseInt(inputValue));
-	      } })), _react2.default.createElement('td', null, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'cost', validationFn: function validationFn(inputCost) {
+	      } })), _react2.default.createElement('td', { style: { width: '11%' } }, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'cost', validationFn: function validationFn(inputCost) {
 	        return Number.isInteger(parseInt(inputCost));
-	      } })), _react2.default.createElement('td', { style: { width: '33%' } }, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'description' })), _react2.default.createElement('td', null, !matrix_infos.read_only ? _react2.default.createElement('span', null, _react2.default.createElement('a', { onClick: function onClick() {
+	      } })), _react2.default.createElement('td', { style: { width: '25%' } }, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'description' })), _react2.default.createElement('td', { style: { width: '25%' } }, !matrix_infos.read_only ? _react2.default.createElement('span', null, _react2.default.createElement('a', { onClick: function onClick() {
 	        dispatch((0, _actions.callDeleteTask)(task.id));
 	      }, className: 'btn btn-default', style: btnStyle }, 'Delete', _react2.default.createElement('span', { className: 'hidden-xs hidden-sm' }, ' Task')), _react2.default.createElement('a', { onClick: function onClick() {
 	        dispatch((0, _actions.callToggleTask)(task.id));
