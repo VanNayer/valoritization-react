@@ -8,7 +8,7 @@ import {callDeleteTask, callToggleTask} from '../actions/actions.js'
 let addTaskSection = !matrix_infos.read_only ? <AddTask/> : false
 
 let TasksList = ({tasks, task_list_display, onNewTextValidated, onTaskClick, activeSort, dispatch}) => {
-  let btnStyle = {cursor: 'pointer', width: '50%'}
+  let btnStyle = {cursor: 'pointer', width: '48%'}
   return (
     <table className='table table-striped' style={{top: '10px'}}>
       <thead>
@@ -31,7 +31,7 @@ let TasksList = ({tasks, task_list_display, onNewTextValidated, onTaskClick, act
           <td style={{width: '25%'}}><EditTaskField task={task} field='description'/></td>
           <td style={{width: '25%'}}>{!matrix_infos.read_only ? (
             <span>
-              <a onClick={() => {dispatch(callDeleteTask(task.id))}} className='btn btn-default' style={btnStyle}>
+              <a onClick={() => {dispatch(callDeleteTask(task.id))}} className='btn btn-default mrxs' style={btnStyle}>
                 Delete<span className='hidden-xs hidden-sm'> Task</span>
               </a>
               <a onClick={() => {dispatch(callToggleTask(task.id))}} className='btn btn-default' style={btnStyle}>

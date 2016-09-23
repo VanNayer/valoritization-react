@@ -11991,7 +11991,7 @@
 	  var activeSort = _ref.activeSort;
 	  var dispatch = _ref.dispatch;
 
-	  var btnStyle = { cursor: 'pointer', width: '50%' };
+	  var btnStyle = { cursor: 'pointer', width: '48%' };
 	  return _react2.default.createElement('table', { className: 'table table-striped', style: { top: '10px' } }, _react2.default.createElement('thead', null, _react2.default.createElement('tr', null, _react2.default.createElement(_sorting_header2.default, { title: 'Ratio', fn: function fn(it) {
 	      return it.value / it.cost;
 	    } }), _react2.default.createElement(_sorting_header2.default, { title: 'Title', fn: function fn(it) {
@@ -12011,7 +12011,7 @@
 	        return Number.isInteger(parseInt(inputCost));
 	      } })), _react2.default.createElement('td', { style: { width: '25%' } }, _react2.default.createElement(_edit_task_field2.default, { task: task, field: 'description' })), _react2.default.createElement('td', { style: { width: '25%' } }, !matrix_infos.read_only ? _react2.default.createElement('span', null, _react2.default.createElement('a', { onClick: function onClick() {
 	        dispatch((0, _actions.callDeleteTask)(task.id));
-	      }, className: 'btn btn-default', style: btnStyle }, 'Delete', _react2.default.createElement('span', { className: 'hidden-xs hidden-sm' }, ' Task')), _react2.default.createElement('a', { onClick: function onClick() {
+	      }, className: 'btn btn-default mrxs', style: btnStyle }, 'Delete', _react2.default.createElement('span', { className: 'hidden-xs hidden-sm' }, ' Task')), _react2.default.createElement('a', { onClick: function onClick() {
 	        dispatch((0, _actions.callToggleTask)(task.id));
 	      }, className: 'btn btn-default', style: btnStyle }, 'Toggle', _react2.default.createElement('span', { className: 'hidden-xs hidden-sm' }, ' Task'))) : _react2.default.createElement('em', null, 'You need to be owner.')));
 	  })));
