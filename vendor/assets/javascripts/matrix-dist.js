@@ -11645,7 +11645,7 @@
 	  var tasks = _ref.tasks;
 
 	  var extremeCoordinates = computeExtremeCoordinates(tasks);
-	  return _react2.default.createElement('div', { style: matrixHeight, className: 'maxl' }, _react2.default.createElement(_cost2.default, { maxCost: extremeCoordinates.maxCost }), _react2.default.createElement(_value2.default, { maxValue: extremeCoordinates.maxValue }), _react2.default.createElement('img', { style: Object.assign(imgStyle, matrixHeight), src: '/matrix-background.png' }), tasks.map(function (task) {
+	  return _react2.default.createElement('div', { style: matrixHeight, className: 'maxs' }, _react2.default.createElement(_cost2.default, { maxCost: extremeCoordinates.maxCost }), _react2.default.createElement(_value2.default, { maxValue: extremeCoordinates.maxValue }), _react2.default.createElement('img', { style: Object.assign(imgStyle, matrixHeight), src: '/matrix-background.png' }), tasks.map(function (task) {
 	    return _react2.default.createElement(_task2.default, _extends({ key: task.id }, _extends({}, task, { extremeCoordinates: extremeCoordinates })));
 	  }));
 	};
@@ -11992,7 +11992,7 @@
 	  var dispatch = _ref.dispatch;
 
 	  var btnStyle = { cursor: 'pointer', width: '50%' };
-	  return _react2.default.createElement('table', { className: 'table table-striped' }, _react2.default.createElement('thead', null, _react2.default.createElement('tr', null, _react2.default.createElement(_sorting_header2.default, { title: 'Ratio', fn: function fn(it) {
+	  return _react2.default.createElement('table', { className: 'table table-striped', style: { top: '10px' } }, _react2.default.createElement('thead', null, _react2.default.createElement('tr', null, _react2.default.createElement(_sorting_header2.default, { title: 'Ratio', fn: function fn(it) {
 	      return it.value / it.cost;
 	    } }), _react2.default.createElement(_sorting_header2.default, { title: 'Title', fn: function fn(it) {
 	      return it.title;

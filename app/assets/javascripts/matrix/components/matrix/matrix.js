@@ -32,7 +32,7 @@ var matrixHeight = {
 const Matrix = ({tasks}) => {
   let extremeCoordinates = computeExtremeCoordinates(tasks)
   return (
-    <div style={matrixHeight} className='maxl' >
+    <div style={matrixHeight} className='maxs' >
       <Cost maxCost={extremeCoordinates.maxCost}/>
       <Value maxValue={extremeCoordinates.maxValue}/>
       <img style={Object.assign(imgStyle, matrixHeight)} src="/matrix-background.png" />
