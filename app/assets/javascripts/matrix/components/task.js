@@ -40,7 +40,7 @@ const Task = connect()(({
       Object.assign({
           textDecoration: completed ? 'line-through': 'none',
           left: computeXPosition(cost, extremeCoordinates) * 0.95 + '%',
-          bottom: computeYPosition(value, extremeCoordinates) + '%'
+          bottom: computeYPosition(value, extremeCoordinates) * 0.95 + '%'
         }, taskStyle)}>
     {title.slice(0,20) + ((title.length > 20) ? '...' : '')}
   </article>
