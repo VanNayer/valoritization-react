@@ -1,10 +1,18 @@
-<div class="valoritization" id="root">
-  <%= javascript_tag do %>
-    var retrieved_tasks = <%=@tasks.to_json.html_safe %>
-    var matrix_infos = <%=@matrix.attributes.merge(read_only: current_user&.id != @matrix.user_id).to_json.html_safe %>
-  <% end %>
+<div class="row mtm mlxl mrxl">
+    <div class="valoritization" id="root">
+        <%= javascript_tag do %>
+        var retrieved_tasks =
+        <%=@tasks.to_json.html_safe %>
+        var matrix_infos =
+        <%=@matrix.attributes.merge(read_only: current_user&.id != @matrix.user_id).to_json.html_safe %>
+        <% end %>
+    </div>
 </div>
 <%= javascript_include_tag 'bundle-matrix' %>
 
-<%= link_to('Edit', edit_matrix_path(@matrix), class: 'btn btn-default' ) unless current_user&.id != @matrix.user_id%>
-<%= link_to 'Back', matrices_path, class: 'btn btn-default' %>
+<footer class="panel panel-default">
+    <div class="panel-heading">
+        <%= link_to('Edit', edit_matrix_path(@matrix), class: 'btn btn-default' ) unless current_user&.id != @matrix.user_id%>
+        <%= link_to 'Back', matrices_path, class: 'btn btn-default' %>
+    </div>
+</div>

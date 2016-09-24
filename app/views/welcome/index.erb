@@ -1,71 +1,69 @@
-<div class="page-header mtn pbn">
-  <figure class="jumbotron ptn pbn hidden-xs hidden-sm" style="background-color: #222; height: 200px; overflow: hidden">
+<div class="man pan">
+  <figure class="jumbotron man pan hidden-xs hidden-sm" style="background-color: #222; height: 200px; overflow: hidden">
     <%=image_tag('welcome-banner.jpg', class: 'center-block', style: 'width:100%; background-position: center center; background-repeat: no-repeat;')%>
   </figure>
 </div>
-
-<div class="row">
-  <section class="col-md-6">
-    <h2>Overwhelmed?</h4>
-    <p>
-      Valoritization is a simple tool to step back and find where to start. It works for every situation where you have too much on your plate; if you want an efficient way to deal with it, you just found it!
-    </p>
-    <ul>
-      <li>You need an easy way of getting everyone to agree on a plan?</li>
-      <li>You have an exam tomorrow and you are 10 chapters behind?</li>
-      <li>You have too many books that you want to read?</li>
-      <li>You want to realize a personal project?</li>
-    </ul>
-    <p>
-      The best example might be this website himself. Indeed,
-      <%=link_to 'I am using this website', matrix_path('d8ff0738-9f96-4bad-82ff-ee6f95583d42') %>
-      to create it.
-    </p>
-    <p>
-      Feel free to add a task you wish to be added to Valoritization.com
-    </p>
-  </section>
-  <section class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4>Setup your matrix:</h4>
+<div class="row mas">
+  <div class="row">
+    <section class="col-md-6">
+      <h2>Overwhelmed?</h4>
+      <p>
+        Valoritization is a simple tool to step back and find where to start. It works for every situation where you have too much on your plate; if you want an efficient way to deal with it, you just found it!
+      </p>
+      <ul>
+        <li>You need an easy way of getting everyone to agree on a plan?</li>
+        <li>You have an exam tomorrow and you are 10 chapters behind?</li>
+        <li>You have too many books that you want to read?</li>
+        <li>You want to realize a personal project?</li>
+      </ul>
+      <p>
+        The best example might be this website himself. Indeed,
+        <%=link_to 'I am using this website', matrix_path('d8ff0738-9f96-4bad-82ff-ee6f95583d42') %>
+        to create it.
+      </p>
+      <p>
+        Feel free to add a task you wish to be added to Valoritization.com
+      </p>
+    </section>
+    <section class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Setup your matrix:</h4>
+        </div>
+        <div class="panel-body pan">
+          <ol class="col-sm-4">
+            <%= render partial: "notice_step", locals: { icon: 'cart-plus', number: 1, text: 'Choose your value metric'}%>
+          </ol>
+          <ol class="col-sm-4">
+            <%= render partial: "notice_step", locals: { icon: 'industry', number: 2, text: 'Choose your cost metric'}%>
+          </ol>
+          <ol class="col-sm-4">
+            <%= render partial: "notice_step", locals: { icon: 'list-ul', number: 3, text: 'List your tasks'}%>
+          </ol>
+        </div>
       </div>
-      <div class="panel-body pan">
-        <ol class="col-sm-4">
-          <%= render partial: "notice_step", locals: { icon: 'cart-plus', number: 1, text: 'Choose your value metric'}%>
-        </ol>
-        <ol class="col-sm-4">
-          <%= render partial: "notice_step", locals: { icon: 'industry', number: 2, text: 'Choose your cost metric'}%>
-        </ol>
-        <ol class="col-sm-4">
-          <%= render partial: "notice_step", locals: { icon: 'list-ul', number: 3, text: 'List your tasks'}%>
-        </ol>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Optimize your work:</h4>
+        </div>
+        <div class="panel-body pan">
+          <ol class="col-sm-4">
+            <%= render partial: "notice_step", locals: { icon: 'ban', number: 1, text: 'Identify the traps'}%>
+          </ol>
+          <ol class="col-sm-4">
+            <%= render partial: "notice_step", locals: { icon: 'bolt', number: 2, text: 'Do the quick-wins'}%>
+          </ol>
+          <ol class="col-sm-4">
+            <%= render partial: "notice_step", locals: { icon: 'cut', number: 3, text: 'Cut the bigger tasks'}%>
+          </ol>
+        </div>
       </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4>Optimize your work:</h4>
-      </div>
-      <div class="panel-body pan">
-        <ol class="col-sm-4">
-          <%= render partial: "notice_step", locals: { icon: 'ban', number: 1, text: 'Identify the traps'}%>
-        </ol>
-        <ol class="col-sm-4">
-          <%= render partial: "notice_step", locals: { icon: 'bolt', number: 2, text: 'Do the quick-wins'}%>
-        </ol>
-        <ol class="col-sm-4">
-          <%= render partial: "notice_step", locals: { icon: 'cut', number: 3, text: 'Cut the bigger tasks'}%>
-        </ol>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
-<section class="panel panel-default">
-  <div class="panel-heading">
-    <h4>You want to give it a try?</h4>
+<footer class="panel panel-default">
+  <div class="panel-heading ptl pbn">
+    <%= link_to 'Create a new matrix', {action: :new, controller: :matrices}, class: 'btn-lg btn-primary navbar-btn' %>
+    <p class="ptm"><strong>Try it now</strong>, just click!</p>
   </div>
-  <div class="panel-body">
-    <strong>No sign-up</strong>, just click! &nbsp;
-    <%= link_to 'Create a new matrix', {action: :new, controller: :matrices}, class: 'btn btn-primary navbar-btn' %>
-  </div>
-</section>
+</footer>

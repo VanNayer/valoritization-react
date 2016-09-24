@@ -7,4 +7,8 @@
     <%= render partial: 'matrices_list', locals: {matrices: @my_matrices, title: 'My matrices'} %>
   </div>
 </div>
-<%= link_to 'New Matrix', new_matrix_path, class: 'btn btn-default' %>
+<footer class="panel panel-default">
+  <div class="panel-heading">
+    <%= link_to 'New Matrix', new_matrix_path, class: 'btn btn-default' %>
+  </div>
+</div>
