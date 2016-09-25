@@ -12,7 +12,7 @@ var matrixLegendStyle = {
 const Value = ({maxValue}) => (
   <div style={matrixLegendStyle}>
     <span style={{position: 'absolute', top: '1%', textAlign: 'center', width: '100%'}}>{maxValue}</span>
-    <span style={{position: 'absolute', top: '50%', textAlign: 'center', width: '100%'}}>{matrix_infos.value}</span>
+    <span style={{position: 'absolute', top: '50%', textAlign: 'center', width: '100%', transform: 'rotate(-90deg)'}}>{matrix_infos.value}</span>
   </div>
 )
 

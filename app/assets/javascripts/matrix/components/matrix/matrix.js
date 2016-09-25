@@ -26,8 +26,10 @@ var imgStyle = {
 };
 
 var matrixHeight = {
-  height: '300px'
+  height: '300px',
+  background: 'linear-gradient(160deg, rgba(137,190,80,1) 0%, rgba(230,126,34,1) 100%)'
 };
+
 
 const Matrix = ({tasks}) => {
   let extremeCoordinates = computeExtremeCoordinates(tasks)
@@ -35,7 +37,7 @@ const Matrix = ({tasks}) => {
     <div style={matrixHeight} className='maxs' >
       <Cost maxCost={extremeCoordinates.maxCost}/>
       <Value maxValue={extremeCoordinates.maxValue}/>
-      <img style={Object.assign(imgStyle, matrixHeight)} src="/matrix-background.png" />
+
       {
         tasks.map(task =><Task key={task.id} {...{...task, extremeCoordinates}} />)
       }

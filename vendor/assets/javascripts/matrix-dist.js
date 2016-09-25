@@ -11566,7 +11566,7 @@
 
 	var Value = function Value(_ref) {
 	  var maxValue = _ref.maxValue;
-	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', top: '1%', textAlign: 'center', width: '100%' } }, maxValue), _react2.default.createElement('span', { style: { position: 'absolute', top: '50%', textAlign: 'center', width: '100%' } }, matrix_infos.value));
+	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', top: '1%', textAlign: 'center', width: '100%' } }, maxValue), _react2.default.createElement('span', { style: { position: 'absolute', top: '50%', textAlign: 'center', width: '100%', transform: 'rotate(-90deg)' } }, matrix_infos.value));
 	};
 
 	Value.propTypes = {
@@ -11638,14 +11638,15 @@
 	};
 
 	var matrixHeight = {
-	  height: '300px'
+	  height: '300px',
+	  background: 'linear-gradient(160deg, rgba(137,190,80,1) 0%, rgba(230,126,34,1) 100%)'
 	};
 
 	var Matrix = function Matrix(_ref) {
 	  var tasks = _ref.tasks;
 
 	  var extremeCoordinates = computeExtremeCoordinates(tasks);
-	  return _react2.default.createElement('div', { style: matrixHeight, className: 'maxs' }, _react2.default.createElement(_cost2.default, { maxCost: extremeCoordinates.maxCost }), _react2.default.createElement(_value2.default, { maxValue: extremeCoordinates.maxValue }), _react2.default.createElement('img', { style: Object.assign(imgStyle, matrixHeight), src: '/matrix-background.png' }), tasks.map(function (task) {
+	  return _react2.default.createElement('div', { style: matrixHeight, className: 'maxs' }, _react2.default.createElement(_cost2.default, { maxCost: extremeCoordinates.maxCost }), _react2.default.createElement(_value2.default, { maxValue: extremeCoordinates.maxValue }), tasks.map(function (task) {
 	    return _react2.default.createElement(_task2.default, _extends({ key: task.id }, _extends({}, task, { extremeCoordinates: extremeCoordinates })));
 	  }));
 	};
