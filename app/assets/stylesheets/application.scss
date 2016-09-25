@@ -163,7 +163,6 @@ $btn-danger-border: $btn-danger-bg;
 // $container-md: $container-desktop;
 // $container-large-desktop: ((1140px + $grid-gutter-width));
 // $container-lg: $container-large-desktop;
-// $navbar-height: 50px;
 // $navbar-margin-bottom: $line-height-computed;
 // $navbar-border-radius: $border-radius-base;
 // $navbar-padding-horizontal: floor(($grid-gutter-width / 2));
@@ -380,7 +379,7 @@ $btn-danger-border: $btn-danger-bg;
 // $carousel-control-font-size: 20px;
 // $carousel-indicator-active-bg: rgb(255, 255, 255);
 // $carousel-indicator-border-color: rgb(255, 255, 255);
-// $carousel-caption-color: rgb(255, 255, 255);
+$carousel-caption-color: rgb(255, 255, 255);
 // $close-font-weight: bold;
 // $close-color: rgb(255, 255, 255);
 // $close-text-shadow: 0 1px 0 #fff;
@@ -416,6 +415,36 @@ body {
   text-align: justify;
   padding-top: 43px;
 }
+
+.carousel-caption {
+  top: 20px;
+}
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
 @media (max-width: $medium) {
   body, input[type="text"], input[type="number"], h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5, .btn {
     font-size: 30px;
