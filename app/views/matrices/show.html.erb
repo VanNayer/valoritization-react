@@ -12,7 +12,7 @@
 
 <footer class="panel panel-default">
     <div class="panel-heading">
-        <%= link_to('Edit', edit_matrix_path(@matrix), class: 'btn btn-default' ) unless current_user&.id != @matrix.user_id%>
+        <%= link_to('Edit', edit_matrix_path(@matrix), class: 'btn btn-default' )%>
         <%= link_to 'Back', matrices_path, class: 'btn btn-default' %>
     </div>
 </div>
