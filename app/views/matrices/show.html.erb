@@ -4,7 +4,7 @@
         var retrieved_tasks =
         <%=@tasks.to_json.html_safe %>
         var matrix_infos =
-        <%=@matrix.attributes.merge(read_only: current_user&.id != @matrix.user_id).to_json.html_safe %>
+        <%=@matrix.attributes.merge(read_only: false).to_json.html_safe %>
         <% end %>
     </div>
 </div>
