@@ -42,10 +42,10 @@
 
     <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading">Identify the traps.
-                <span class="text-muted">Don't work hard for no value.</span>
+            <h2 class="featurette-heading">Identify traps;
+                <span class="text-muted">don't work hard for no value.</span>
             </h2>
-            <p class="lead">It is a classic to start on something complexe and useless; just because you are in the mood for. Force yourself not to pick any task in the red zone.</p>
+            <p class="lead">It is a classic error to start on something complexe and useless. Force yourself not to pick any task in the red zone.</p>
         </div>
         <div class="col-md-5">
             <p class="man pan text-center" style="font-size: 150px">
@@ -58,8 +58,8 @@
 
     <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-            <h2 class="featurette-heading">Do the quick-wins.
-                <span class="text-muted">Impress yourself.</span>
+            <h2 class="featurette-heading">Do quick-wins;
+                <span class="text-muted">gain confidence.</span>
             </h2>
             <p class="lead">You will deliver value the most productive way. You will have positive feedback, feel usefull and it will help you to keep going.</p>
         </div>
@@ -74,10 +74,10 @@
 
     <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading">Cut the bigger tasks.
-                <span class="text-muted">Do not forget big things...</span>
+            <h2 class="featurette-heading">Split big;
+                <span class="text-muted">80/20</span>
             </h2>
-            <p class="lead">..., but you need to split them. There is always a way to have 80% of it for 20% of the cost as M. Paretto once said.
+            <p class="lead">There is always a way to have 80% of it for 20% of the cost as M. Paretto once said.
             </p>
         </div>
         <div class="col-md-5">
@@ -87,10 +87,17 @@
         </div>
     </div>
 
-    <hr class="featurette-divider">
+    <footer class="panel panel-default">
+        <div class="panel-heading ptl pbn" align="center">
+            <%= link_to 'Create a new matrix', {action: :new, controller: :matrices}, class: 'btn btn-primary' %>
+            <p class="ptm">
+                <strong>Try it now</strong>, just click!</p>
+        </div>
+    </footer>
+
 
     <section class="row featurette lead">
-        <h3>Overwhelmed?</h3>
+        <h3>But when?</h3>
         <p>
             It works for every situation where you have too much on your plate; if you want an efficient way to deal with it, you just found it!
         </p>
@@ -110,12 +117,3 @@
         </p>
     </section>
 </div>
-
-<!-- /END THE FEATURETTES -->
-<footer class="panel panel-default">
-    <div class="panel-heading ptl pbn" style="padding-left: 65%;">
-        <%= link_to 'Create a new matrix', {action: :new, controller: :matrices}, class: 'btn-lg btn-primary' %>
-        <p class="ptm">
-            <strong>Try it now</strong>, just click!</p>
-    </div>
-</footer>
