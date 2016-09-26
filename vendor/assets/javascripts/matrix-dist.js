@@ -11519,19 +11519,23 @@
 
 	var matrixLegendStyle = {
 	  position: 'absolute',
-	  backgroundColor: 'black',
-	  color: 'white',
+	  backgroundColor: 'white',
+	  color: 'black',
 	  width: '100%',
 	  height: '20px',
-	  bottom: '-20px'
+	  bottom: '-20px',
+	  fontWeight: '900'
+
 	};
 
 	var Cost = function Cost(_ref) {
 	  var maxCost = _ref.maxCost;
-	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', right: '50%' } }, matrix_infos.cost), _react2.default.createElement('span', { style: { position: 'absolute', right: '1%' } }, maxCost));
+	  var minCost = _ref.minCost;
+	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', right: '99%' } }, minCost, matrix_infos.cost), _react2.default.createElement('span', { style: { position: 'absolute', right: '50%' } }, (maxCost - minCost) / 2, matrix_infos.cost), _react2.default.createElement('span', { style: { position: 'absolute', right: '1%' } }, maxCost, matrix_infos.cost));
 	};
 
 	Cost.propTypes = {
+	  minCost: _react.PropTypes.number.isRequired,
 	  maxCost: _react.PropTypes.number.isRequired
 	};
 
@@ -11639,14 +11643,14 @@
 
 	var matrixHeight = {
 	  height: '300px',
-	  background: 'linear-gradient(160deg, rgba(137,190,80,1) 0%, rgba(230,126,34,1) 100%)'
+	  background: 'linear-gradient(160deg, rgba(255,255,255,1) 0%, rgba(230,126,34,1) 100%)'
 	};
 
 	var Matrix = function Matrix(_ref) {
 	  var tasks = _ref.tasks;
 
 	  var extremeCoordinates = computeExtremeCoordinates(tasks);
-	  return _react2.default.createElement('div', { style: matrixHeight, className: 'maxs' }, _react2.default.createElement(_cost2.default, { maxCost: extremeCoordinates.maxCost }), _react2.default.createElement(_value2.default, { maxValue: extremeCoordinates.maxValue }), tasks.map(function (task) {
+	  return _react2.default.createElement('div', { style: matrixHeight, className: 'maxs' }, _react2.default.createElement(_cost2.default, { maxCost: extremeCoordinates.maxCost, minCost: extremeCoordinates.minCost }), _react2.default.createElement(_value2.default, { maxValue: extremeCoordinates.maxValue }), tasks.map(function (task) {
 	    return _react2.default.createElement(_task2.default, _extends({ key: task.id }, _extends({}, task, { extremeCoordinates: extremeCoordinates })));
 	  }));
 	};
@@ -11993,7 +11997,7 @@
 	  var dispatch = _ref.dispatch;
 
 	  var btnStyle = { cursor: 'pointer', width: '48%' };
-	  return _react2.default.createElement('table', { className: 'table table-striped', style: { top: '10px' } }, _react2.default.createElement('thead', null, _react2.default.createElement('tr', null, _react2.default.createElement(_sorting_header2.default, { title: 'Ratio', fn: function fn(it) {
+	  return _react2.default.createElement('table', { className: 'table table-striped', style: { top: '30px' } }, _react2.default.createElement('thead', null, _react2.default.createElement('tr', null, _react2.default.createElement(_sorting_header2.default, { title: 'Ratio', fn: function fn(it) {
 	      return it.value / it.cost;
 	    } }), _react2.default.createElement(_sorting_header2.default, { title: 'Title', fn: function fn(it) {
 	      return it.title;

@@ -10,7 +10,7 @@ let addTaskSection = !matrix_infos.read_only ? <AddTask/> : false
 let TasksList = ({tasks, task_list_display, onNewTextValidated, onTaskClick, activeSort, dispatch}) => {
   let btnStyle = {cursor: 'pointer', width: '48%'}
   return (
-    <table className='table table-striped' style={{top: '10px'}}>
+    <table className='table table-striped' style={{top: '30px'}}>
       <thead>
         <tr>
           <SortingHeader title='Ratio' fn={it => {return (it.value/it.cost)}}/>

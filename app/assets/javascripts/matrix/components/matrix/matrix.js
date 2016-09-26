@@ -27,7 +27,7 @@ var imgStyle = {
 
 var matrixHeight = {
   height: '300px',
-  background: 'linear-gradient(160deg, rgba(137,190,80,1) 0%, rgba(230,126,34,1) 100%)'
+  background: 'linear-gradient(160deg, rgba(255,255,255,1) 0%, rgba(230,126,34,1) 100%)'
 };
 
 
@@ -35,7 +35,7 @@ const Matrix = ({tasks}) => {
   let extremeCoordinates = computeExtremeCoordinates(tasks)
   return (
     <div style={matrixHeight} className='maxs' >
-      <Cost maxCost={extremeCoordinates.maxCost}/>
+      <Cost maxCost={extremeCoordinates.maxCost} minCost={extremeCoordinates.minCost}/>
       <Value maxValue={extremeCoordinates.maxValue}/>
 
       {
