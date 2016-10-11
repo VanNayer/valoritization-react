@@ -11531,7 +11531,7 @@
 	var Cost = function Cost(_ref) {
 	  var maxCost = _ref.maxCost;
 	  var minCost = _ref.minCost;
-	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', right: '99%' } }, minCost, matrix_infos.cost), _react2.default.createElement('span', { style: { position: 'absolute', right: '50%' } }, (maxCost - minCost) / 2, matrix_infos.cost), _react2.default.createElement('span', { style: { position: 'absolute', right: '1%' } }, maxCost, matrix_infos.cost));
+	  return _react2.default.createElement('div', { style: matrixLegendStyle }, _react2.default.createElement('span', { style: { position: 'absolute', right: '95%' } }, minCost, ' ', matrix_infos.cost), _react2.default.createElement('span', { style: { position: 'absolute', right: '50%' } }, (maxCost - minCost) / 2, ' ', matrix_infos.cost), _react2.default.createElement('span', { style: { position: 'absolute', right: '1%' } }, maxCost, ' ', matrix_infos.cost));
 	};
 
 	Cost.propTypes = {

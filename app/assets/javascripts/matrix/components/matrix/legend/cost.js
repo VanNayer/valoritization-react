@@ -13,9 +13,9 @@ var matrixLegendStyle = {
 
 const Cost = ({maxCost, minCost}) => (
   <div style={matrixLegendStyle}>
-    <span style={{position: 'absolute', right: '99%'}}>{minCost}{matrix_infos.cost}</span>
-    <span style={{position: 'absolute', right: '50%'}}>{(maxCost-minCost)/2}{matrix_infos.cost}</span>
-    <span style={{position: 'absolute', right: '1%'}}>{maxCost}{matrix_infos.cost}</span>
+    <span style={{position: 'absolute', right: '95%'}}>{minCost} {matrix_infos.cost}</span>
+    <span style={{position: 'absolute', right: '50%'}}>{(maxCost-minCost)/2} {matrix_infos.cost}</span>
+    <span style={{position: 'absolute', right: '1%'}}>{maxCost} {matrix_infos.cost}</span>
   </div>
 )
 
