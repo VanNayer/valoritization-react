@@ -45,6 +45,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-tagsinput-rails (0.4.2.1)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (8.2.2)
     capybara (2.5.0)
@@ -196,9 +198,9 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
+  bootstrap-tagsinput-rails
   byebug
   capybara-puma
-  coffee-rails (~> 4.1.0)
   database_cleaner
   devise
   factory_girl_rails
