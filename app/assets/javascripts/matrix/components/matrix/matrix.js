@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import { connect } from 'react-redux'
 import Task from '../task.js'
 import Cost from './legend/cost.js'
 import Value from './legend/value.js'
@@ -37,14 +38,12 @@ const Matrix = ({tasks}) => {
     <div style={matrixHeight} className='maxs' >
       <Cost maxCost={extremeCoordinates.maxCost} minCost={extremeCoordinates.minCost}/>
       <Value maxValue={extremeCoordinates.maxValue}/>
-
       {
-        tasks.map(task =><Task key={task.id} {...{...task, extremeCoordinates}} />)
+        tasks.map(task => <Task key={task.id} {...{...task, extremeCoordinates}} />)
       }
     </div>
   )
 }
-
 
 Matrix.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape({
@@ -56,4 +55,22 @@ Matrix.propTypes = {
     ).isRequired).isRequired
 }
 
-export default Matrix
+const getVisibleTasks = (tasks, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return tasks
+    case 'SHOW_COMPLETED':
+      return tasks.filter(t => t.completed)
+    case 'SHOW_ACTIVE':
+      return tasks.filter(t => !t.completed)
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    tasks: getVisibleTasks(state.tasks, state.visibilityFilter),
+    extremeCoordinates: state.extremeCoordinates
+  }
+}
+
+export default connect(mapStateToProps)(Matrix)
