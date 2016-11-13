@@ -5,7 +5,7 @@ import { setVisibilityFilter } from '../actions/actions.js'
 
 const FilterLink = ({ active, children, onClick }) => {
   if (active) {
-    return <span className="btn btn-primary disabled">{children}</span>
+    return <span className="btn btn-primary disabled mrxs">{children}</span>
   }
 
   return (
@@ -14,7 +14,7 @@ const FilterLink = ({ active, children, onClick }) => {
          e.preventDefault()
          onClick()
        }}
-       className="btn btn-primary"
+       className="btn btn-primary mrxs"
     >
       {children}
     </a>
