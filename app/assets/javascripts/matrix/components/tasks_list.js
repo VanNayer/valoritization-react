@@ -46,7 +46,6 @@ let TasksList = ({tasks, task_list_display, onNewTextValidated, onTaskClick, act
 }
 const mapStateToProps = (state) => {
   return {
-    tasks: state.tasks,
     task_list_display: state.tasklistDisplay
   }
 }

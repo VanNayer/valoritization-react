@@ -24,17 +24,17 @@ const detectTagsInDescription = (tasks) => {
 
 const Header = ({ tags = []}) => (
   <div className='row man pan'>
-    <div className='col-md-5'>
+    <div className='col-md-8'>
       <FilterLink filter="SHOW_ALL">All</FilterLink>
       <FilterLink filter="SHOW_ACTIVE">Active</FilterLink>
       <FilterLink filter="SHOW_COMPLETED">Completed</FilterLink>
       {
         tags.map( tag =>
-          <FilterLink filter={tag}>{tag}</FilterLink>
+          <FilterLink filter={tag} key={tag}>{tag}</FilterLink>
         )
       }
     </div>
-    <div className='col-md-5 h3 maxs hidden-xs hidden-sm'>
+    <div className='col-md-2 h3 maxs hidden-xs hidden-sm'>
       {matrix_infos.name}
     </div>
   </div>
