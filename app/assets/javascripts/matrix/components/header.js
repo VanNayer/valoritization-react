@@ -17,7 +17,7 @@ const uniq = (arrArg) => {
 const detectTagsInDescription = (tasks) => {
   return uniq(
     flatten(tasks.map(
-      task => task.description.match(/\S*#(?:\[[^\]]+\]|\S+)/g))
+      task => task.description.match(/(\s|^)+#(?:\[[^\]]+\]|\S+)/g))
       )
     ).filter(tag => tag)
 }
