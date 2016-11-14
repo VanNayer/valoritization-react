@@ -13,7 +13,7 @@ const getVisibleTasks = (tasks, filter) => {
     case 'SHOW_ACTIVE':
       return tasks.filter(t => !t.completed)
     default:
-      return tasks.filter(t => t.description.includes(filter))
+      return tasks.filter(t => t.description.toUpperCase().includes(filter))
   }
 }
 

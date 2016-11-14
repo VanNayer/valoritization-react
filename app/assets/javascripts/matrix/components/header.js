@@ -2,26 +2,6 @@ import React from 'react'
 import FilterLink from '../components/filter_link.js'
 import { connect } from 'react-redux'
 
-
-const flatten = list => list.reduce(
-    (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
-);
-
-const uniq = (arrArg) => {
-  return arrArg.filter((elem, pos, arr) => {
-    return arr.indexOf(elem) == pos;
-  });
-}
-
-
-const detectTagsInDescription = (tasks) => {
-  return uniq(
-    flatten(tasks.map(
-      task => task.description.match(/(\s|^)+#(?:\[[^\]]+\]|\S+)/g))
-      )
-    ).filter(tag => tag)
-}
-
 const Header = ({ tags = []}) => (
   <div className='row man pan'>
     <div className='col-md-8'>
@@ -39,6 +19,15 @@ const Header = ({ tags = []}) => (
     </div>
   </div>
 )
+
+const detectTagsInDescription = tasks =>
+  tasks
+    .map(task => task.description.match(/(\s|^)+#(?:\[[^\]]+\]|\S+)/g))
+    .reduce((flattened, current) => flattened.concat(current)) // flatten arrays of matches
+    .filter(description => description) // remove undefined
+    .map(description => description.trim().toUpperCase())
+    .filter((elem, pos, arr) => arr.indexOf(elem) == pos) // uniq
+
 
 const mapStateToProps = (state) => {
   return {
