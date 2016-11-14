@@ -23,7 +23,7 @@ const Header = ({ tags = []}) => (
 const detectTagsInDescription = tasks =>
   tasks
     .map(task => task.description.match(/(\s|^)+#(?:\[[^\]]+\]|\S+)/g))
-    .reduce((flattened, current) => flattened.concat(current)) // flatten arrays of matches
+    .reduce((flattened, current) => flattened.concat(current), []) // flatten arrays of matches
     .filter(description => description) // remove undefined
     .map(description => description.trim().toUpperCase())
     .filter((elem, pos, arr) => arr.indexOf(elem) == pos) // uniq
