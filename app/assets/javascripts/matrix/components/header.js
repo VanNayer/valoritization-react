@@ -28,12 +28,10 @@ const detectTagsInDescription = tasks =>
     .map(description => description.trim().toUpperCase())
     .filter((elem, pos, arr) => arr.indexOf(elem) == pos) // uniq
 
-
 const mapStateToProps = (state) => {
   return {
     tags: detectTagsInDescription(state.tasks)
   }
 }
-
 
 export default connect(mapStateToProps)(Header)
